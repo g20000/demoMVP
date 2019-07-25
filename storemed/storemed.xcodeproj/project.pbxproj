@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0DFE15CFE97CA1834AD0E3EC /* Pods_storemed.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C4EE855C02412065F3E0B987 /* Pods_storemed.framework */; };
 		426CF7C622E9F23600DF76B2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 426CF7C522E9F23600DF76B2 /* AppDelegate.swift */; };
 		426CF7C822E9F23600DF76B2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 426CF7C722E9F23600DF76B2 /* ViewController.swift */; };
 		426CF7CB22E9F23600DF76B2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 426CF7C922E9F23600DF76B2 /* Main.storyboard */; };
@@ -15,6 +16,8 @@
 		426CF7D322E9F23700DF76B2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 426CF7D122E9F23700DF76B2 /* LaunchScreen.storyboard */; };
 		426CF7DE22E9F23700DF76B2 /* storemedTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 426CF7DD22E9F23700DF76B2 /* storemedTests.swift */; };
 		426CF7E922E9F23700DF76B2 /* storemedUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 426CF7E822E9F23700DF76B2 /* storemedUITests.swift */; };
+		426CF7F722E9F64200DF76B2 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 426CF7F622E9F64200DF76B2 /* Podfile */; };
+		FCF80A7D34FE0DF473E24ADF /* Pods_storemedTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16E35944BA1B8ECC02705D64 /* Pods_storemedTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +38,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		16E35944BA1B8ECC02705D64 /* Pods_storemedTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_storemedTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		426CF7C222E9F23600DF76B2 /* storemed.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = storemed.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		426CF7C522E9F23600DF76B2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		426CF7C722E9F23600DF76B2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -49,6 +53,12 @@
 		426CF7E422E9F23700DF76B2 /* storemedUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = storemedUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		426CF7E822E9F23700DF76B2 /* storemedUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = storemedUITests.swift; sourceTree = "<group>"; };
 		426CF7EA22E9F23700DF76B2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		426CF7F622E9F64200DF76B2 /* Podfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
+		92BA3EBFD080BBD7E5144BFE /* Pods-storemedTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-storemedTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-storemedTests/Pods-storemedTests.release.xcconfig"; sourceTree = "<group>"; };
+		B15651B6C6DB5A0F836673A2 /* Pods-storemed.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-storemed.debug.xcconfig"; path = "Pods/Target Support Files/Pods-storemed/Pods-storemed.debug.xcconfig"; sourceTree = "<group>"; };
+		BA79A849C2C7461C3299B697 /* Pods-storemed.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-storemed.release.xcconfig"; path = "Pods/Target Support Files/Pods-storemed/Pods-storemed.release.xcconfig"; sourceTree = "<group>"; };
+		C4EE855C02412065F3E0B987 /* Pods_storemed.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_storemed.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F80E27074B78D2B714006B49 /* Pods-storemedTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-storemedTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-storemedTests/Pods-storemedTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +66,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0DFE15CFE97CA1834AD0E3EC /* Pods_storemed.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,6 +74,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FCF80A7D34FE0DF473E24ADF /* Pods_storemedTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -79,10 +91,13 @@
 		426CF7B922E9F23600DF76B2 = {
 			isa = PBXGroup;
 			children = (
+				426CF7F622E9F64200DF76B2 /* Podfile */,
 				426CF7C422E9F23600DF76B2 /* storemed */,
 				426CF7DC22E9F23700DF76B2 /* storemedTests */,
 				426CF7E722E9F23700DF76B2 /* storemedUITests */,
 				426CF7C322E9F23600DF76B2 /* Products */,
+				C82E9E6A5C327C6FE8231AB4 /* Pods */,
+				BE8083FAB31E8D130B8AA6F1 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -128,6 +143,26 @@
 			path = storemedUITests;
 			sourceTree = "<group>";
 		};
+		BE8083FAB31E8D130B8AA6F1 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C4EE855C02412065F3E0B987 /* Pods_storemed.framework */,
+				16E35944BA1B8ECC02705D64 /* Pods_storemedTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C82E9E6A5C327C6FE8231AB4 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B15651B6C6DB5A0F836673A2 /* Pods-storemed.debug.xcconfig */,
+				BA79A849C2C7461C3299B697 /* Pods-storemed.release.xcconfig */,
+				F80E27074B78D2B714006B49 /* Pods-storemedTests.debug.xcconfig */,
+				92BA3EBFD080BBD7E5144BFE /* Pods-storemedTests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -135,9 +170,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 426CF7ED22E9F23700DF76B2 /* Build configuration list for PBXNativeTarget "storemed" */;
 			buildPhases = (
+				F7157C06989AC70C0EC382CD /* [CP] Check Pods Manifest.lock */,
 				426CF7BE22E9F23600DF76B2 /* Sources */,
 				426CF7BF22E9F23600DF76B2 /* Frameworks */,
 				426CF7C022E9F23600DF76B2 /* Resources */,
+				3AEEFB11D36967CA02BFE4F1 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -152,6 +189,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 426CF7F022E9F23700DF76B2 /* Build configuration list for PBXNativeTarget "storemedTests" */;
 			buildPhases = (
+				0253F330CC2311C87DB7EBDE /* [CP] Check Pods Manifest.lock */,
 				426CF7D522E9F23700DF76B2 /* Sources */,
 				426CF7D622E9F23700DF76B2 /* Frameworks */,
 				426CF7D722E9F23700DF76B2 /* Resources */,
@@ -234,6 +272,7 @@
 			files = (
 				426CF7D322E9F23700DF76B2 /* LaunchScreen.storyboard in Resources */,
 				426CF7D022E9F23700DF76B2 /* Assets.xcassets in Resources */,
+				426CF7F722E9F64200DF76B2 /* Podfile in Resources */,
 				426CF7CB22E9F23600DF76B2 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -253,6 +292,81 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0253F330CC2311C87DB7EBDE /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-storemedTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3AEEFB11D36967CA02BFE4F1 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-storemed/Pods-storemed-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/PKHUD/PKHUD.framework",
+				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
+				"${BUILT_PRODUCTS_DIR}/Typist/Typist.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PKHUD.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Typist.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-storemed/Pods-storemed-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F7157C06989AC70C0EC382CD /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-storemed-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		426CF7BE22E9F23600DF76B2 /* Sources */ = {
@@ -434,6 +548,7 @@
 		};
 		426CF7EE22E9F23700DF76B2 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B15651B6C6DB5A0F836673A2 /* Pods-storemed.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -452,6 +567,7 @@
 		};
 		426CF7EF22E9F23700DF76B2 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BA79A849C2C7461C3299B697 /* Pods-storemed.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -470,6 +586,7 @@
 		};
 		426CF7F122E9F23700DF76B2 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F80E27074B78D2B714006B49 /* Pods-storemedTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -491,6 +608,7 @@
 		};
 		426CF7F222E9F23700DF76B2 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 92BA3EBFD080BBD7E5144BFE /* Pods-storemedTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
