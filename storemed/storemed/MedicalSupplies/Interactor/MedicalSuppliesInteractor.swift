@@ -12,4 +12,6 @@ class MedicalSuppliesInteractor: NSObject, MedicalSuppliesInteractorInput {
 
     weak var output: MedicalSuppliesInteractorOutput?
     
+    
+    
 }
