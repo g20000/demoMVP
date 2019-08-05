@@ -24,8 +24,7 @@ class BaseApi: NSObject {
     open func preparedParams(parameters: [String: Any]?) -> [String: Any]? {
         var requestParameters = parameters ?? [String: Any]()
         
-        requestParameters["client_id"] = App.shared.appConfig?.networkSettings?.clientId
-        requestParameters["client_secret"] = App.shared.appConfig?.networkSettings?.clientSecret
+        requestParameters["token"] = App.shared.appConfig?.networkSettings?.token
         
         return requestParameters
     }

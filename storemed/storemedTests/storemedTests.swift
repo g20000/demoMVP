@@ -11,17 +11,33 @@ import XCTest
 
 class storemedTests: XCTestCase {
 
+    var api = MedicalSuppliesApi()
+    
     override func setUp() {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+        App.shared.loadConfig()
     }
 
     override func tearDown() {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    func testMedicalSuppliesApiAlive() {
+        let expectation = self.expectation(description: "Is api alive?")
+        
+        let filter = Filter()
+        
+        let _ = api.loadMedicalSupplies(page: 1, filter: filter, success: { (page) in
+            print("success")
+            print(page as Any)
+            XCTAssertNotNil(page)
+            expectation.fulfill()
+        }) { (error) in
+            print("fail")
+            XCTFail(error.localizedDescription)
+            expectation.fulfill()
+        }
+        
+        self.waitForExpectations(timeout: 100)
     }
 
     func testPerformanceExample() {
