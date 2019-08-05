@@ -239,9 +239,9 @@
 			isa = PBXGroup;
 			children = (
 				4236733F22F61B7200A775BD /* Protocols */,
+				4264BAD722F8642B004419C1 /* View */,
 				4236734022F61CD100A775BD /* Interactor */,
 				4222463E22F378F900A85D9D /* MedicalSuppliesRouter.swift */,
-				427050F622F4857B00A7BD9E /* MedicalSuppliesViewController.swift */,
 				427050F822F485D300A7BD9E /* MedicalSuppliesPresenter.swift */,
 			);
 			path = MedicalSupplies;
@@ -265,6 +265,14 @@
 				427050FA22F485F200A7BD9E /* MedicalSuppliesInteractor.swift */,
 			);
 			path = Interactor;
+			sourceTree = "<group>";
+		};
+		4264BAD722F8642B004419C1 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				427050F622F4857B00A7BD9E /* MedicalSuppliesViewController.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		426CF7B922E9F23600DF76B2 = {
