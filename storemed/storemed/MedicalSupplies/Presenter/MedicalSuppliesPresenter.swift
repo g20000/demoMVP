@@ -8,10 +8,10 @@
 
 import UIKit
 
-class MedicalSuppliesPresenter: NSObject, MedicalSuppliesInteractorOutput {
-
-    weak var view: MedicalSuppliesView?
-    weak var interactor: MedicalSuppliesInteractorInput?
+class MedicalSuppliesPresenter: NSObject {
+    
+    var view: MedicalSuppliesView?
+    var interactor: MedicalSuppliesInteractorInput?
     
     var page: Page?
     
@@ -19,8 +19,5 @@ class MedicalSuppliesPresenter: NSObject, MedicalSuppliesInteractorOutput {
         interactor?.requestMedicalSupplies(query)
     }
     
-    func sendPageCopy(_ page: Page?) {
-        
-    }
-    
 }
+

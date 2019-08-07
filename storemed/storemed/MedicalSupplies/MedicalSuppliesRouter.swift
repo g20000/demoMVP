@@ -10,13 +10,13 @@ import UIKit
 
 class MedicalSuppliesRouter: NSObject {
     
-    var rootViewController = UIViewController()
+    var window: UIWindow?
     
-    init(_ viewController: UIViewController?) {
+    init(_ window: UIWindow?) {
         super.init()
         
-        rootViewController = viewController!
-        self.createAppModules()
+        self.window = window
+        createAppModules()
     }
     
     private func createAppModules() {
@@ -24,7 +24,9 @@ class MedicalSuppliesRouter: NSObject {
     }
     
     private func createMedicalSuppliesList() {
-        let view = MedicalSuppliesViewController()
+        let navigationController = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateInitialViewController() as! UINavigationController
+        
+        let view = navigationController.viewControllers.first as! MedicalSuppliesViewController
         let presenter = MedicalSuppliesPresenter()
         let interactor = MedicalSuppliesInteractor()
         
@@ -34,7 +36,7 @@ class MedicalSuppliesRouter: NSObject {
         presenter.interactor = interactor
         interactor.output = presenter
         
-        rootViewController = view
+        window?.rootViewController = navigationController
     }
     
 }

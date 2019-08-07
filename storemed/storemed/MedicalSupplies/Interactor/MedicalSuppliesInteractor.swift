@@ -8,21 +8,9 @@
 
 import UIKit
 
-class MedicalSuppliesInteractor: NSObject, MedicalSuppliesInteractorInput {
+class MedicalSuppliesInteractor: NSObject {
 
-    weak var output: MedicalSuppliesInteractorOutput?
-    
-    func requestMedicalSupplies(_ query: String) {
-        var filter = Filter()
-        filter.query = query
-        
-        _ = MedicalSuppliesApi().loadMedicalSupplies(page: 0, filter: filter, success: { page in
-            
-        }, failure: { error in
-            
-        })
-    }
-    
-    
+    var output: MedicalSuppliesInteractorOutput?
     
 }
+

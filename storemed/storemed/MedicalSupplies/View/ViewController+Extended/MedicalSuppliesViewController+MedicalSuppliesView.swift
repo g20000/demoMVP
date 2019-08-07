@@ -7,3 +7,12 @@
 //
 
 import Foundation
+
+extension MedicalSuppliesViewController: MedicalSuppliesView {
+    
+    func showMedicalSupplies(_ medicalSupplies: Array<MedicalSupply>?) {
+        items = medicalSupplies
+        tableView.reloadData()
+    }
+    
+}

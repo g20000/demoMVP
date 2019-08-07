@@ -10,4 +10,6 @@ import Foundation
 
 protocol MedicalSuppliesView: AnyObject {
     
+    func showMedicalSupplies(_ medicalSupplies: Array<MedicalSupply>?)
+    
 }

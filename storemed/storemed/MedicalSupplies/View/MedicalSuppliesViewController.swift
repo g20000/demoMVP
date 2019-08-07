@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MedicalSuppliesViewController: UIViewController, MedicalSuppliesView {
+class MedicalSuppliesViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -16,6 +16,8 @@ class MedicalSuppliesViewController: UIViewController, MedicalSuppliesView {
     private var query = ""
     
     private var searchController: UISearchController!
+    
+    internal var items: Array<MedicalSupply>?
     
 // MARK: - Lyfecycle
     
