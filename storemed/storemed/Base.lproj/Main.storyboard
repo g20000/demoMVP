@@ -25,7 +25,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="457"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <prototypes>
-                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" rowHeight="520" id="lXw-ka-UIc">
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" rowHeight="520" id="lXw-ka-UIc" customClass="MedicalSupplyTableViewCell" customModule="storemed" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="28" width="320" height="520"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="lXw-ka-UIc" id="yd2-sM-tTK">
@@ -33,7 +33,7 @@
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="LvP-Hn-4rk">
-                                                            <rect key="frame" x="0.0" y="0.0" width="320" height="519.5"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="320" height="520"/>
                                                             <subviews>
                                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ah6-pG-aRp" userLabel="Percent Container">
                                                                     <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
@@ -56,8 +56,8 @@
                                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MZq-En-NMe" userLabel="Image Container">
                                                                     <rect key="frame" x="0.0" y="68.5" width="320" height="110"/>
                                                                     <subviews>
-                                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="image-nature" translatesAutoresizingMaskIntoConstraints="NO" id="4qn-i4-xja">
-                                                                            <rect key="frame" x="152" y="5" width="16" height="100"/>
+                                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="4qn-i4-xja">
+                                                                            <rect key="frame" x="26.5" y="5" width="267" height="100"/>
                                                                             <constraints>
                                                                                 <constraint firstAttribute="height" constant="100" id="hsa-qX-cRu"/>
                                                                             </constraints>
@@ -109,7 +109,7 @@
                                                                     </constraints>
                                                                 </view>
                                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GIg-E9-LJC" userLabel="Producer Container">
-                                                                    <rect key="frame" x="0.0" y="333" width="320" height="50"/>
+                                                                    <rect key="frame" x="0.0" y="333.5" width="320" height="50"/>
                                                                     <subviews>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Изготовитель" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kiM-9n-JEq">
                                                                             <rect key="frame" x="5" y="5" width="109" height="40"/>
@@ -145,7 +145,7 @@
                                                                     </constraints>
                                                                 </view>
                                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0WF-qy-m4H" userLabel="Discount Price Container">
-                                                                    <rect key="frame" x="0.0" y="469.5" width="320" height="50"/>
+                                                                    <rect key="frame" x="0.0" y="470" width="320" height="50"/>
                                                                     <subviews>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Цена со скидкой" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fkx-wZ-eRT">
                                                                             <rect key="frame" x="5" y="5" width="135.5" height="40"/>
@@ -172,6 +172,15 @@
                                                         <constraint firstItem="LvP-Hn-4rk" firstAttribute="leading" secondItem="yd2-sM-tTK" secondAttribute="leading" id="bgW-C7-9c6"/>
                                                     </constraints>
                                                 </tableViewCellContentView>
+                                                <connections>
+                                                    <outlet property="imageViewMedicalSupply" destination="4qn-i4-xja" id="JdH-Sc-Wws"/>
+                                                    <outlet property="labelDiscountPrice" destination="Fkx-wZ-eRT" id="pAI-Eg-uAI"/>
+                                                    <outlet property="labelPercent" destination="3sW-s0-qVF" id="jv6-MP-rwg"/>
+                                                    <outlet property="labelProducer" destination="kiM-9n-JEq" id="UnS-Vg-Apf"/>
+                                                    <outlet property="labelRealPrice" destination="1Li-eJ-h78" id="r1k-BW-8LP"/>
+                                                    <outlet property="labelSubstance" destination="jQg-re-XOv" id="n0L-5l-NWa"/>
+                                                    <outlet property="labelTitle" destination="gWp-8q-LaL" id="Osa-Bg-K4M"/>
+                                                </connections>
                                             </tableViewCell>
                                         </prototypes>
                                         <connections>
@@ -227,6 +236,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="image-nature" width="267" height="200"/>
+        <image name="placeholder" width="267" height="200"/>
     </resources>
 </document>

@@ -12,6 +12,7 @@ class MedicalSupplyTableViewCell: UITableViewCell {
 
     @IBOutlet weak var labelPercent: UILabel!
     @IBOutlet weak var labelTitle: UILabel!
+    @IBOutlet weak var imageViewMedicalSupply: UIImageView!
     @IBOutlet weak var labelSubstance: UILabel!
     @IBOutlet weak var labelProducer: UILabel!
     @IBOutlet weak var labelRealPrice: UILabel!

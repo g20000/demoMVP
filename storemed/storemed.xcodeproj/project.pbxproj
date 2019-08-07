@@ -74,6 +74,7 @@
 		427050F922F485D300A7BD9E /* MedicalSuppliesPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 427050F822F485D300A7BD9E /* MedicalSuppliesPresenter.swift */; };
 		427050FB22F485F200A7BD9E /* MedicalSuppliesInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 427050FA22F485F200A7BD9E /* MedicalSuppliesInteractor.swift */; };
 		4294797622FA123800CC3F07 /* MedicalSuppliesViewController+SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4294797522FA123800CC3F07 /* MedicalSuppliesViewController+SearchBar.swift */; };
+		42A1679222FB657700A1DEE5 /* ImageViewExtented.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42A1679122FB657700A1DEE5 /* ImageViewExtented.swift */; };
 		42A3655F22F4E50C0090CF4B /* MedicalSuppliesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42A3655E22F4E50C0090CF4B /* MedicalSuppliesView.swift */; };
 		42B864F022F89A3B00BDD123 /* MedicalSupplyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42B864EF22F89A3B00BDD123 /* MedicalSupplyTableViewCell.swift */; };
 		42B864F222F89D7500BDD123 /* MedicalSuppliesViewController+TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42B864F122F89D7500BDD123 /* MedicalSuppliesViewController+TableView.swift */; };
@@ -142,6 +143,7 @@
 		427050F822F485D300A7BD9E /* MedicalSuppliesPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicalSuppliesPresenter.swift; sourceTree = "<group>"; };
 		427050FA22F485F200A7BD9E /* MedicalSuppliesInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicalSuppliesInteractor.swift; sourceTree = "<group>"; };
 		4294797522FA123800CC3F07 /* MedicalSuppliesViewController+SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MedicalSuppliesViewController+SearchBar.swift"; sourceTree = "<group>"; };
+		42A1679122FB657700A1DEE5 /* ImageViewExtented.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageViewExtented.swift; sourceTree = "<group>"; };
 		42A3655E22F4E50C0090CF4B /* MedicalSuppliesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicalSuppliesView.swift; sourceTree = "<group>"; };
 		42B864EF22F89A3B00BDD123 /* MedicalSupplyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicalSupplyTableViewCell.swift; sourceTree = "<group>"; };
 		42B864F122F89D7500BDD123 /* MedicalSuppliesViewController+TableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MedicalSuppliesViewController+TableView.swift"; sourceTree = "<group>"; };
@@ -247,6 +249,7 @@
 			children = (
 				424F73CB22FAEFFD00BA8904 /* Array+Extensions.swift */,
 				424F73D022FAF0D400BA8904 /* Copying+Copy.swift */,
+				42A1679122FB657700A1DEE5 /* ImageViewExtented.swift */,
 				421FF98922F6E1C0009005A7 /* NSError+Extention.swift */,
 			);
 			path = Extensions;
@@ -661,6 +664,7 @@
 				42B864F822F8A3DE00BDD123 /* MedicalSupplyData.swift in Sources */,
 				4294797622FA123800CC3F07 /* MedicalSuppliesViewController+SearchBar.swift in Sources */,
 				424F73CC22FAEFFD00BA8904 /* Array+Extensions.swift in Sources */,
+				42A1679222FB657700A1DEE5 /* ImageViewExtented.swift in Sources */,
 				421E264822F832F2005C91C9 /* ManyItems.swift in Sources */,
 				42B864F522F89F0500BDD123 /* MedicalSuppliesViewController+MedicalSuppliesView.swift in Sources */,
 				421FF98A22F6E1C0009005A7 /* NSError+Extention.swift in Sources */,
