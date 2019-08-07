@@ -12,12 +12,17 @@ class MedicalSuppliesInteractor: NSObject, MedicalSuppliesInteractorInput {
 
     weak var output: MedicalSuppliesInteractorOutput?
     
-    func requestMedicalSupplies() {
-//        _ = MedicalSuppliesApi().loadMedicalSupplies(page: 0, filter: в, success: { page in
-//
-//        }, failure: { error in
-//
-//        })
+    func requestMedicalSupplies(_ query: String) {
+        var filter = Filter()
+        filter.query = query
+        
+        _ = MedicalSuppliesApi().loadMedicalSupplies(page: 0, filter: filter, success: { page in
+            
+        }, failure: { error in
+            
+        })
     }
+    
+    
     
 }

@@ -47,6 +47,9 @@
 		421FF99E22F744D7009005A7 /* PrivateApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 421FF99D22F744D7009005A7 /* PrivateApi.swift */; };
 		4222463F22F378F900A85D9D /* MedicalSuppliesRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4222463E22F378F900A85D9D /* MedicalSuppliesRouter.swift */; };
 		4236733E22F6116000A775BD /* MedicalSuppliesInteractorIO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4236733D22F6116000A775BD /* MedicalSuppliesInteractorIO.swift */; };
+		424F73CC22FAEFFD00BA8904 /* Array+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 424F73CB22FAEFFD00BA8904 /* Array+Extensions.swift */; };
+		424F73CF22FAF09A00BA8904 /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 424F73CE22FAF09A00BA8904 /* Protocols.swift */; };
+		424F73D122FAF0D400BA8904 /* Copying+Copy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 424F73D022FAF0D400BA8904 /* Copying+Copy.swift */; };
 		426CF7C622E9F23600DF76B2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 426CF7C522E9F23600DF76B2 /* AppDelegate.swift */; };
 		426CF7CB22E9F23600DF76B2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 426CF7C922E9F23600DF76B2 /* Main.storyboard */; };
 		426CF7CE22E9F23600DF76B2 /* storemed.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 426CF7CC22E9F23600DF76B2 /* storemed.xcdatamodeld */; };
@@ -58,6 +61,7 @@
 		427050F722F4857B00A7BD9E /* MedicalSuppliesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 427050F622F4857B00A7BD9E /* MedicalSuppliesViewController.swift */; };
 		427050F922F485D300A7BD9E /* MedicalSuppliesPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 427050F822F485D300A7BD9E /* MedicalSuppliesPresenter.swift */; };
 		427050FB22F485F200A7BD9E /* MedicalSuppliesInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 427050FA22F485F200A7BD9E /* MedicalSuppliesInteractor.swift */; };
+		4294797622FA123800CC3F07 /* MedicalSuppliesViewController+SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4294797522FA123800CC3F07 /* MedicalSuppliesViewController+SearchBar.swift */; };
 		42A3655F22F4E50C0090CF4B /* MedicalSuppliesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42A3655E22F4E50C0090CF4B /* MedicalSuppliesView.swift */; };
 		42B864F022F89A3B00BDD123 /* MedicalSupplyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42B864EF22F89A3B00BDD123 /* MedicalSupplyTableViewCell.swift */; };
 		42B864F222F89D7500BDD123 /* MedicalSuppliesViewController+TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42B864F122F89D7500BDD123 /* MedicalSuppliesViewController+TableView.swift */; };
@@ -103,6 +107,9 @@
 		421FF99D22F744D7009005A7 /* PrivateApi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrivateApi.swift; sourceTree = "<group>"; };
 		4222463E22F378F900A85D9D /* MedicalSuppliesRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicalSuppliesRouter.swift; sourceTree = "<group>"; };
 		4236733D22F6116000A775BD /* MedicalSuppliesInteractorIO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicalSuppliesInteractorIO.swift; sourceTree = "<group>"; };
+		424F73CB22FAEFFD00BA8904 /* Array+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Extensions.swift"; sourceTree = "<group>"; };
+		424F73CE22FAF09A00BA8904 /* Protocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Protocols.swift; sourceTree = "<group>"; };
+		424F73D022FAF0D400BA8904 /* Copying+Copy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Copying+Copy.swift"; sourceTree = "<group>"; };
 		426CF7C222E9F23600DF76B2 /* storemed.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = storemed.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		426CF7C522E9F23600DF76B2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		426CF7CA22E9F23600DF76B2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -120,6 +127,7 @@
 		427050F622F4857B00A7BD9E /* MedicalSuppliesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicalSuppliesViewController.swift; sourceTree = "<group>"; };
 		427050F822F485D300A7BD9E /* MedicalSuppliesPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicalSuppliesPresenter.swift; sourceTree = "<group>"; };
 		427050FA22F485F200A7BD9E /* MedicalSuppliesInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicalSuppliesInteractor.swift; sourceTree = "<group>"; };
+		4294797522FA123800CC3F07 /* MedicalSuppliesViewController+SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MedicalSuppliesViewController+SearchBar.swift"; sourceTree = "<group>"; };
 		42A3655E22F4E50C0090CF4B /* MedicalSuppliesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicalSuppliesView.swift; sourceTree = "<group>"; };
 		42B864EF22F89A3B00BDD123 /* MedicalSupplyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicalSupplyTableViewCell.swift; sourceTree = "<group>"; };
 		42B864F122F89D7500BDD123 /* MedicalSuppliesViewController+TableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MedicalSuppliesViewController+TableView.swift"; sourceTree = "<group>"; };
@@ -188,11 +196,12 @@
 		421FF98422F6DE54009005A7 /* Base */ = {
 			isa = PBXGroup;
 			children = (
-				421FF99A22F70E80009005A7 /* Plists */,
 				421FF98D22F6EF8C009005A7 /* AppConfig */,
 				421FF99922F6F099009005A7 /* Extensions */,
 				421E264422F832B0005C91C9 /* Models */,
 				421FF99822F6F051009005A7 /* Network */,
+				421FF99A22F70E80009005A7 /* Plists */,
+				424F73CD22FAF06500BA8904 /* Protocols */,
 				421FF98722F6E0B1009005A7 /* App.swift */,
 				421FF99622F6F024009005A7 /* User.swift */,
 			);
@@ -222,6 +231,8 @@
 		421FF99922F6F099009005A7 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				424F73CB22FAEFFD00BA8904 /* Array+Extensions.swift */,
+				424F73D022FAF0D400BA8904 /* Copying+Copy.swift */,
 				421FF98922F6E1C0009005A7 /* NSError+Extention.swift */,
 			);
 			path = Extensions;
@@ -274,6 +285,14 @@
 				427050FA22F485F200A7BD9E /* MedicalSuppliesInteractor.swift */,
 			);
 			path = Interactor;
+			sourceTree = "<group>";
+		};
+		424F73CD22FAF06500BA8904 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				424F73CE22FAF09A00BA8904 /* Protocols.swift */,
+			);
+			path = Protocols;
 			sourceTree = "<group>";
 		};
 		4264BAD722F8642B004419C1 /* View */ = {
@@ -355,6 +374,7 @@
 			children = (
 				42B864F122F89D7500BDD123 /* MedicalSuppliesViewController+TableView.swift */,
 				42B864F422F89F0500BDD123 /* MedicalSuppliesViewController+MedicalSuppliesView.swift */,
+				4294797522FA123800CC3F07 /* MedicalSuppliesViewController+SearchBar.swift */,
 			);
 			path = "ViewController+Extended";
 			sourceTree = "<group>";
@@ -599,6 +619,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				42B864F822F8A3DE00BDD123 /* MedicalSupplyData.swift in Sources */,
+				4294797622FA123800CC3F07 /* MedicalSuppliesViewController+SearchBar.swift in Sources */,
+				424F73CC22FAEFFD00BA8904 /* Array+Extensions.swift in Sources */,
 				421E264822F832F2005C91C9 /* ManyItems.swift in Sources */,
 				42B864F522F89F0500BDD123 /* MedicalSuppliesViewController+MedicalSuppliesView.swift in Sources */,
 				421FF98A22F6E1C0009005A7 /* NSError+Extention.swift in Sources */,
@@ -611,6 +633,8 @@
 				421E264A22F83F99005C91C9 /* Page.swift in Sources */,
 				421FF99322F6EF9A009005A7 /* AppConfig.swift in Sources */,
 				4236733E22F6116000A775BD /* MedicalSuppliesInteractorIO.swift in Sources */,
+				424F73CF22FAF09A00BA8904 /* Protocols.swift in Sources */,
+				424F73D122FAF0D400BA8904 /* Copying+Copy.swift in Sources */,
 				421E263F22F82DCF005C91C9 /* MedicalSuppliesApi.swift in Sources */,
 				426CF7C622E9F23600DF76B2 /* AppDelegate.swift in Sources */,
 				421FF99E22F744D7009005A7 /* PrivateApi.swift in Sources */,

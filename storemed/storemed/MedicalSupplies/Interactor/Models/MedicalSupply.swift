@@ -8,8 +8,8 @@
 
 import UIKit
 
-class MedicalSupply: NSObject, Codable {
-
+class MedicalSupply: NSObject, Codable, Copying {
+    
     var id: Int?
     var title: String?
     var price: Float?
@@ -26,6 +26,21 @@ class MedicalSupply: NSObject, Codable {
         case image = "image"
         case producer = "producer_title"
         case substance = "substance_title"
+    }
+    
+    required init(original: MedicalSupply) {
+        id = original.id
+        title = original.title
+        price = original.price
+        rawPrice = original.rawPrice
+        image = original.image
+        producer = original.producer
+        substance = original.substance
+    }
+    
+    func copy(with zone: NSZone? = nil) -> Any {
+        let copy = MedicalSupply(original: self)
+        return copy
     }
     
 }

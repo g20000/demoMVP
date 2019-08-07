@@ -10,12 +10,12 @@ import Foundation
 
 protocol MedicalSuppliesInteractorInput: AnyObject {
     
-    func requestMedicalSupplies()
+    func requestMedicalSupplies(_ query: String)
     
 }
 
 protocol MedicalSuppliesInteractorOutput: AnyObject {
     
-    
+    func sendPageCopy(_ page: Page?)
     
 }

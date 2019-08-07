@@ -8,8 +8,8 @@
 
 import UIKit
 
-class Page: NSObject, Codable {
-
+class Page: NSObject, Codable, Copying {
+    
     var page: Int?
     var items: Array<MedicalSupply>?
     var lastPage: Int?
@@ -22,6 +22,19 @@ class Page: NSObject, Codable {
         case lastPage = "last_page"
         case amountOfItemsOnPage = "per_page"
         case amountOfItems = "total"
+    }
+    
+    required init(original: Page) {
+        page = original.page
+        items = original.items?.clone()
+        lastPage = original.lastPage
+        amountOfItemsOnPage = original.amountOfItemsOnPage
+        amountOfItems = original.amountOfItems
+    }
+    
+    func copy(with zone: NSZone? = nil) -> Any {
+        let copy = Page(original: self)
+        return copy
     }
     
 }

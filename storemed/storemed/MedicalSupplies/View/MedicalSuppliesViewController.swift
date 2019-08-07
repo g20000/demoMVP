@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MedicalSuppliesViewController: UIViewController, MedicalSuppliesView, UITableViewDelegate, UITableViewDataSource, UISearchControllerDelegate {
+class MedicalSuppliesViewController: UIViewController, MedicalSuppliesView {
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -22,6 +22,7 @@ class MedicalSuppliesViewController: UIViewController, MedicalSuppliesView, UITa
     override func viewDidLoad() {
         super.viewDidLoad()
         configureViews()
+        presenter.updateView(searchController.searchBar.text!)
     }
     
     private func configureViews() {
@@ -39,7 +40,6 @@ class MedicalSuppliesViewController: UIViewController, MedicalSuppliesView, UITa
             tableView.tableHeaderView = searchController.searchBar
         }
         
-        searchController.delegate = self
         searchController.dimsBackgroundDuringPresentation = false
         searchController.searchBar.delegate = self
         definesPresentationContext = true
@@ -47,13 +47,3 @@ class MedicalSuppliesViewController: UIViewController, MedicalSuppliesView, UITa
     
 }
 
-
-// MARK: - UISearchBarDelegate
-
-extension MedicalSuppliesViewController: UISearchBarDelegate {
-    
-    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        searchBar.resignFirstResponder()
-    }
-    
-}

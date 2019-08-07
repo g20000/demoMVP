@@ -13,10 +13,14 @@ class MedicalSuppliesPresenter: NSObject, MedicalSuppliesInteractorOutput {
     weak var view: MedicalSuppliesView?
     weak var interactor: MedicalSuppliesInteractorInput?
     
-    var currentPage = 0
+    var page: Page?
     
-    func updateView() {
-        interactor?.requestMedicalSupplies()
+    func updateView(_ query: String) {
+        interactor?.requestMedicalSupplies(query)
+    }
+    
+    func sendPageCopy(_ page: Page?) {
+        
     }
     
 }
