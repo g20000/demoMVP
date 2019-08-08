@@ -14,3 +14,18 @@ class MedicalSuppliesInteractor: NSObject {
     
 }
 
+extension MedicalSuppliesInteractor: MedicalSuppliesInteractorInput {
+    
+    func requestMedicalSupplies(_ query: String) {
+        var filter = Filter()
+        filter.query = query
+        
+        _ = MedicalSuppliesApi().loadMedicalSupplies(page: 1, filter: filter, success: { page in
+            self.output?.sendPageCopy(page?.copy())
+        }, failure: { error in
+            
+        })
+    }
+    
+}
+

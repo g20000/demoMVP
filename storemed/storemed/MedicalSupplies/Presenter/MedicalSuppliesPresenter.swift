@@ -21,3 +21,15 @@ class MedicalSuppliesPresenter: NSObject {
     
 }
 
+extension MedicalSuppliesPresenter: MedicalSuppliesInteractorOutput {
+    
+    func sendPageCopy(_ page: Page?) {
+        showMedicalSupplies(page?.items)
+    }
+    
+    func showMedicalSupplies(_ items: Array<MedicalSupply>?) {
+        view?.showMedicalSupplies(items)
+    }
+    
+}
+
