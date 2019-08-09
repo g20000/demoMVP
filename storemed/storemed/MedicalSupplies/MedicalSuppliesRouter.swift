@@ -10,7 +10,7 @@ import UIKit
 
 class MedicalSuppliesRouter: NSObject {
     
-    var window: UIWindow?
+    private var window: UIWindow?
     
     init(_ window: UIWindow?) {
         super.init()

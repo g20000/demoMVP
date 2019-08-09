@@ -13,5 +13,4 @@ class ColorsConfig: NSObject, Decodable {
     var primary: String?
     var secondary: String?
     
-
 }

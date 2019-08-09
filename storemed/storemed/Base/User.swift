@@ -15,11 +15,11 @@ class User: NSObject, Codable {
         var addTask: Bool!
     }
     
-    
     enum Role {
         case participant
         case moderator
     }
+    
     var id: String?
     var username: String?
     var fullName: String?

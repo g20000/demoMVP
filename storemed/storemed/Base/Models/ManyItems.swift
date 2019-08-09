@@ -8,7 +8,7 @@
 
 import Foundation
 
-class ManyItems<Type: Codable >: NSObject, Codable{
+class ManyItems<Type: Codable >: NSObject, Codable {
     
     var count: Int?
     var total: Int?

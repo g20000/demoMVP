@@ -13,7 +13,6 @@ class MedicalSuppliesViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     
     var presenter = MedicalSuppliesPresenter()
-    private var query = ""
     
     private var searchController: UISearchController!
     
@@ -42,6 +41,7 @@ class MedicalSuppliesViewController: UIViewController {
         
         searchController.dimsBackgroundDuringPresentation = false
         searchController.searchBar.delegate = self
+        searchController.searchBar.placeholder = "Я ищу"
         definesPresentationContext = true
     }
     
@@ -58,20 +58,19 @@ extension MedicalSuppliesViewController: UITableViewDelegate, UITableViewDataSou
     }
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        print(indexPath.row)
         if indexPath.row == items.count - 1 {
-            presenter.updateView(searchController.searchBar.text!)
+            presenter.updateView(searchController.searchBar.text!.trimmingCharacters(in: .whitespaces))
         }
     }
     
-    func createTableViewCell(_ tableView: UITableView, indexPath: IndexPath) -> UITableViewCell {
+    private func createTableViewCell(_ tableView: UITableView, indexPath: IndexPath) -> UITableViewCell {
         return prepareMedicalSupplyTableViewCell(tableView, indexPath: indexPath)
     }
     
-    func prepareMedicalSupplyTableViewCell(_ tableView: UITableView, indexPath: IndexPath) -> UITableViewCell {
-        print(indexPath)
+    private func prepareMedicalSupplyTableViewCell(_ tableView: UITableView, indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell") as! MedicalSupplyTableViewCell
         let medicalSupply = medicalSupplyByIndexPath(indexPath)
+        
         cell.labelTitle.text = medicalSupply?.title
         cell.imageViewMedicalSupply.sd_setImage(withStringUrl: medicalSupply?.image, placeholderImage: UIImage(named: "placeholder"), completed: nil)
         cell.labelSubstance.text = medicalSupply?.substance
@@ -109,6 +108,7 @@ extension MedicalSuppliesViewController: UISearchBarDelegate {
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         searchBar.resignFirstResponder()
+        presenter.updateView(searchController.searchBar.text!.trimmingCharacters(in: .whitespaces))
     }
     
 }

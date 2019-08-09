@@ -13,7 +13,7 @@ class MedicalSuppliesPresenter: NSObject {
     var view: MedicalSuppliesView?
     var interactor: MedicalSuppliesInteractorInput?
     
-    var page: Page?
+    private var page: Page?
     
     func updateView(_ query: String) {
         let currentPageNumber = (page != nil) ? page?.pageNumber : 0
@@ -29,7 +29,7 @@ extension MedicalSuppliesPresenter: MedicalSuppliesInteractorOutput {
         showMedicalSupplies(self.page?.items)
     }
     
-    func showMedicalSupplies(_ items: Array<MedicalSupply>?) {
+    private func showMedicalSupplies(_ items: Array<MedicalSupply>?) {
         view?.showMedicalSupplies(items)
     }
     
