@@ -16,7 +16,8 @@ class MedicalSuppliesPresenter: NSObject {
     var page: Page?
     
     func updateView(_ query: String) {
-        interactor?.requestMedicalSupplies(query)
+        let currentPageNumber = (page != nil) ? page?.pageNumber : 0
+        interactor?.requestMedicalSupplies(query, currentPageNumber: currentPageNumber!)
     }
     
 }
@@ -24,7 +25,8 @@ class MedicalSuppliesPresenter: NSObject {
 extension MedicalSuppliesPresenter: MedicalSuppliesInteractorOutput {
     
     func sendPageCopy(_ page: Page?) {
-        showMedicalSupplies(page?.items)
+        self.page = page
+        showMedicalSupplies(self.page?.items)
     }
     
     func showMedicalSupplies(_ items: Array<MedicalSupply>?) {

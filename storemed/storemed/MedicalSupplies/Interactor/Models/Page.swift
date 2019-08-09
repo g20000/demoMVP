@@ -10,14 +10,14 @@ import UIKit
 
 class Page: NSObject, Codable, Copying {
     
-    var page: Int?
+    var pageNumber: Int?
     var items: Array<MedicalSupply>?
     var lastPage: Int?
     var amountOfItemsOnPage: Int?
     var amountOfItems: Int?
     
     enum CodingKeys: String, CodingKey {
-        case page = "current_page"
+        case pageNumber = "current_page"
         case items = "items"
         case lastPage = "last_page"
         case amountOfItemsOnPage = "per_page"
@@ -25,7 +25,7 @@ class Page: NSObject, Codable, Copying {
     }
     
     required init(original: Page) {
-        page = original.page
+        pageNumber = original.pageNumber
         items = original.items?.clone()
         lastPage = original.lastPage
         amountOfItemsOnPage = original.amountOfItemsOnPage

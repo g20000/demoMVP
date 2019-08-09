@@ -46,6 +46,7 @@
 		421FF99C22F70EB2009005A7 /* AppConfig.plist in Resources */ = {isa = PBXBuildFile; fileRef = 421FF99B22F70EB2009005A7 /* AppConfig.plist */; };
 		421FF99E22F744D7009005A7 /* PrivateApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 421FF99D22F744D7009005A7 /* PrivateApi.swift */; };
 		4222463F22F378F900A85D9D /* MedicalSuppliesRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4222463E22F378F900A85D9D /* MedicalSuppliesRouter.swift */; };
+		4232813C22FDA956006A11FB /* LoadMoreControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4232813B22FDA956006A11FB /* LoadMoreControl.swift */; };
 		4236733E22F6116000A775BD /* MedicalSuppliesInteractorIO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4236733D22F6116000A775BD /* MedicalSuppliesInteractorIO.swift */; };
 		424F73CC22FAEFFD00BA8904 /* Array+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 424F73CB22FAEFFD00BA8904 /* Array+Extensions.swift */; };
 		424F73CF22FAF09A00BA8904 /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 424F73CE22FAF09A00BA8904 /* Protocols.swift */; };
@@ -109,6 +110,7 @@
 		421FF99B22F70EB2009005A7 /* AppConfig.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = AppConfig.plist; sourceTree = "<group>"; };
 		421FF99D22F744D7009005A7 /* PrivateApi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrivateApi.swift; sourceTree = "<group>"; };
 		4222463E22F378F900A85D9D /* MedicalSuppliesRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicalSuppliesRouter.swift; sourceTree = "<group>"; };
+		4232813B22FDA956006A11FB /* LoadMoreControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadMoreControl.swift; sourceTree = "<group>"; };
 		4236733D22F6116000A775BD /* MedicalSuppliesInteractorIO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicalSuppliesInteractorIO.swift; sourceTree = "<group>"; };
 		424F73CB22FAEFFD00BA8904 /* Array+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Extensions.swift"; sourceTree = "<group>"; };
 		424F73CE22FAF09A00BA8904 /* Protocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Protocols.swift; sourceTree = "<group>"; };
@@ -199,6 +201,7 @@
 			children = (
 				421FF98D22F6EF8C009005A7 /* AppConfig */,
 				421FF99922F6F099009005A7 /* Extensions */,
+				4232813A22FDA930006A11FB /* Helpers */,
 				421E264422F832B0005C91C9 /* Models */,
 				421FF99822F6F051009005A7 /* Network */,
 				421FF99A22F70E80009005A7 /* Plists */,
@@ -266,6 +269,14 @@
 				4222463E22F378F900A85D9D /* MedicalSuppliesRouter.swift */,
 			);
 			path = MedicalSupplies;
+			sourceTree = "<group>";
+		};
+		4232813A22FDA930006A11FB /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				4232813B22FDA956006A11FB /* LoadMoreControl.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 		4236733F22F61B7200A775BD /* Protocols */ = {
@@ -641,6 +652,7 @@
 				427050F722F4857B00A7BD9E /* MedicalSuppliesViewController.swift in Sources */,
 				421E264322F82F00005C91C9 /* Filter.swift in Sources */,
 				42A3655F22F4E50C0090CF4B /* MedicalSuppliesView.swift in Sources */,
+				4232813C22FDA956006A11FB /* LoadMoreControl.swift in Sources */,
 				427050F922F485D300A7BD9E /* MedicalSuppliesPresenter.swift in Sources */,
 				426CF7CE22E9F23600DF76B2 /* storemed.xcdatamodeld in Sources */,
 				427050FB22F485F200A7BD9E /* MedicalSuppliesInteractor.swift in Sources */,

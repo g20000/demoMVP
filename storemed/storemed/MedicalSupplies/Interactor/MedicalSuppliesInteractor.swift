@@ -16,11 +16,12 @@ class MedicalSuppliesInteractor: NSObject {
 
 extension MedicalSuppliesInteractor: MedicalSuppliesInteractorInput {
     
-    func requestMedicalSupplies(_ query: String) {
+    func requestMedicalSupplies(_ query: String, currentPageNumber: Int) {
         var filter = Filter()
         filter.query = query
         
-        _ = MedicalSuppliesApi().loadMedicalSupplies(page: 1, filter: filter, success: { page in
+        let requiredPageNumber = currentPageNumber + 1
+        _ = MedicalSuppliesApi().loadMedicalSupplies(page: requiredPageNumber, filter: filter, success: { page in
             self.output?.sendPageCopy(page?.copy())
         }, failure: { error in
             
