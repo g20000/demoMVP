@@ -21,7 +21,7 @@ class MedicalSuppliesViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureViews()
-        presenter.updateView(searchController.searchBar.text!)
+        updateView()
     }
     
     private func configureViews() {
@@ -45,7 +45,15 @@ class MedicalSuppliesViewController: UIViewController {
         definesPresentationContext = true
     }
     
+    private func updateView() {
+        showHUD()
+        presenter.updateView(searchController.searchBar.text!.trimmingCharacters(in: .whitespaces))
+    }
+    
 }
+
+
+//MARK: - tableView
 
 extension MedicalSuppliesViewController: UITableViewDelegate, UITableViewDataSource {
     
@@ -59,7 +67,7 @@ extension MedicalSuppliesViewController: UITableViewDelegate, UITableViewDataSou
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         if indexPath.row == items.count - 1 {
-            presenter.updateView(searchController.searchBar.text!.trimmingCharacters(in: .whitespaces))
+            updateView()
         }
     }
     
@@ -95,20 +103,28 @@ extension MedicalSuppliesViewController: UITableViewDelegate, UITableViewDataSou
     
 }
 
+
+//MARK: - presenter response
+
 extension MedicalSuppliesViewController: MedicalSuppliesView {
     
     func showMedicalSupplies(_ medicalSupplies: Array<MedicalSupply>?) {
+        hideHUD()
         self.items.append(contentsOf: medicalSupplies!)
         tableView.reloadData()
     }
     
 }
 
+
+//MARK: - searchBar
+
 extension MedicalSuppliesViewController: UISearchBarDelegate {
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         searchBar.resignFirstResponder()
-        presenter.updateView(searchController.searchBar.text!.trimmingCharacters(in: .whitespaces))
+        showHUD()
+        updateView()
     }
     
 }
