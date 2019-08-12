@@ -41,7 +41,7 @@ extension MedicalSuppliesPresenter: MedicalSuppliesInteractorOutput {
             medicalSupplyItem.title = medicalSupply.title
             medicalSupplyItem.substance = medicalSupply.substance
             medicalSupplyItem.producer = medicalSupply.producer
-            medicalSupplyItem.rawPrice = medicalSupply.rawPrice!.description + " Р"
+            medicalSupplyItem.rawPrice = String(medicalSupply.rawPrice!.description + " Р").strikeThrough()
             medicalSupplyItem.price = medicalSupply.price!.description + " Р"
             return medicalSupplyItem
             })!

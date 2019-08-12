@@ -84,7 +84,7 @@ extension MedicalSuppliesViewController: UITableViewDelegate, UITableViewDataSou
         cell.imageViewMedicalSupply.sd_setImage(withStringUrl: medicalSupply?.image, placeholderImage: UIImage(named: "placeholder"), completed: nil)
         cell.labelSubstance.text = medicalSupply?.substance
         cell.labelProducer.text = medicalSupply?.producer
-        cell.labelRealPrice.text = medicalSupply?.rawPrice
+        cell.labelRealPrice.attributedText = medicalSupply?.rawPrice
         cell.labelDiscountPrice.text = medicalSupply?.price
         
         return cell

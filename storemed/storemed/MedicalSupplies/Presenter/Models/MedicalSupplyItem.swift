@@ -12,7 +12,7 @@ class MedicalSupplyItem: NSObject {
 
     var title: String?
     var price: String?
-    var rawPrice: String?
+    var rawPrice: NSAttributedString?
     var image: String?
     var producer: String?
     var substance: String?
