@@ -16,7 +16,7 @@ class MedicalSuppliesViewController: UIViewController {
     
     private var searchController: UISearchController!
     
-    internal var items = Array<MedicalSupply>()
+    internal var items = Array<MedicalSupplyItem>()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -79,21 +79,22 @@ extension MedicalSuppliesViewController: UITableViewDelegate, UITableViewDataSou
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell") as! MedicalSupplyTableViewCell
         let medicalSupply = medicalSupplyByIndexPath(indexPath)
         
+        cell.labelPercent.text = medicalSupply?.percent
         cell.labelTitle.text = medicalSupply?.title
         cell.imageViewMedicalSupply.sd_setImage(withStringUrl: medicalSupply?.image, placeholderImage: UIImage(named: "placeholder"), completed: nil)
         cell.labelSubstance.text = medicalSupply?.substance
         cell.labelProducer.text = medicalSupply?.producer
-        cell.labelRealPrice.text = medicalSupply?.rawPrice?.description
-        cell.labelDiscountPrice.text = medicalSupply?.price?.description
+        cell.labelRealPrice.text = medicalSupply?.rawPrice
+        cell.labelDiscountPrice.text = medicalSupply?.price
         
         return cell
     }
     
-    private func medicalSupplyByIndexPath(_ indexPath: IndexPath) -> MedicalSupply? {
+    private func medicalSupplyByIndexPath(_ indexPath: IndexPath) -> MedicalSupplyItem? {
         return medicalSupplyByIndex(indexPath.row)
     }
     
-    private func medicalSupplyByIndex(_ index: Int) -> MedicalSupply? {
+    private func medicalSupplyByIndex(_ index: Int) -> MedicalSupplyItem? {
         if index < self.items.count {
             return self.items[index]
         }
@@ -108,7 +109,7 @@ extension MedicalSuppliesViewController: UITableViewDelegate, UITableViewDataSou
 
 extension MedicalSuppliesViewController: MedicalSuppliesView {
     
-    func showMedicalSupplies(_ medicalSupplies: Array<MedicalSupply>?) {
+    func showMedicalSupplies(_ medicalSupplies: Array<MedicalSupplyItem>?) {
         hideHUD()
         self.items.append(contentsOf: medicalSupplies!)
         tableView.reloadData()

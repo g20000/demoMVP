@@ -34,7 +34,18 @@ extension MedicalSuppliesPresenter: MedicalSuppliesInteractorOutput {
     }
     
     private func showMedicalSupplies(_ items: Array<MedicalSupply>?) {
-        view?.showMedicalSupplies(items)
+        let medicalSuppliesItems: [MedicalSupplyItem] = (items?.compactMap{ medicalSupply in
+            let medicalSupplyItem = MedicalSupplyItem()
+            medicalSupplyItem.percent = "-" + String(Int((Float(medicalSupply.price!) / Float(medicalSupply.rawPrice!) * 100))) + "%"
+            medicalSupplyItem.image = medicalSupply.image
+            medicalSupplyItem.title = medicalSupply.title
+            medicalSupplyItem.substance = medicalSupply.substance
+            medicalSupplyItem.producer = medicalSupply.producer
+            medicalSupplyItem.rawPrice = medicalSupply.rawPrice!.description + " Р"
+            medicalSupplyItem.price = medicalSupply.price!.description + " Р"
+            return medicalSupplyItem
+            })!
+        view?.showMedicalSupplies(medicalSuppliesItems)
     }
     
 }
