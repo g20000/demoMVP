@@ -24,7 +24,7 @@ extension MedicalSuppliesInteractor: MedicalSuppliesInteractorInput {
         _ = MedicalSuppliesApi().loadMedicalSupplies(page: requiredPageNumber, filter: filter, success: { page in
             self.output?.sendPageCopy(page?.copy())
         }, failure: { error in
-            
+            self.output?.sendErrorInfo(error.description)
         })
     }
     

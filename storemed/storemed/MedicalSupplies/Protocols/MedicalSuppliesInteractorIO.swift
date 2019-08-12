@@ -17,5 +17,6 @@ protocol MedicalSuppliesInteractorInput: AnyObject {
 protocol MedicalSuppliesInteractorOutput: AnyObject {
     
     func sendPageCopy(_ page: Page?)
+    func sendErrorInfo(_ errorInfo: String?)
     
 }

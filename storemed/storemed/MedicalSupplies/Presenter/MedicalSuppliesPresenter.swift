@@ -24,6 +24,10 @@ class MedicalSuppliesPresenter: NSObject {
 
 extension MedicalSuppliesPresenter: MedicalSuppliesInteractorOutput {
     
+    func sendErrorInfo(_ errorInfo: String?) {
+        view?.showErrorInfo(title: "Ошибка", description: errorInfo)
+    }
+    
     func sendPageCopy(_ page: Page?) {
         self.page = page
         showMedicalSupplies(self.page?.items)

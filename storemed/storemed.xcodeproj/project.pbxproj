@@ -51,6 +51,8 @@
 		421FF99722F6F024009005A7 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 421FF99622F6F024009005A7 /* User.swift */; };
 		421FF99C22F70EB2009005A7 /* AppConfig.plist in Resources */ = {isa = PBXBuildFile; fileRef = 421FF99B22F70EB2009005A7 /* AppConfig.plist */; };
 		421FF99E22F744D7009005A7 /* PrivateApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 421FF99D22F744D7009005A7 /* PrivateApi.swift */; };
+		42217B33230163160080A86E /* UIViewController+Alerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42217B32230163160080A86E /* UIViewController+Alerts.swift */; };
+		42217B34230163160080A86E /* UIViewController+Alerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42217B32230163160080A86E /* UIViewController+Alerts.swift */; };
 		4222463F22F378F900A85D9D /* MedicalSuppliesRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4222463E22F378F900A85D9D /* MedicalSuppliesRouter.swift */; };
 		4232813C22FDA956006A11FB /* LoadMoreControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4232813B22FDA956006A11FB /* LoadMoreControl.swift */; };
 		4236733E22F6116000A775BD /* MedicalSuppliesInteractorIO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4236733D22F6116000A775BD /* MedicalSuppliesInteractorIO.swift */; };
@@ -118,6 +120,7 @@
 		421FF99622F6F024009005A7 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		421FF99B22F70EB2009005A7 /* AppConfig.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = AppConfig.plist; sourceTree = "<group>"; };
 		421FF99D22F744D7009005A7 /* PrivateApi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrivateApi.swift; sourceTree = "<group>"; };
+		42217B32230163160080A86E /* UIViewController+Alerts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Alerts.swift"; sourceTree = "<group>"; };
 		4222463E22F378F900A85D9D /* MedicalSuppliesRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicalSuppliesRouter.swift; sourceTree = "<group>"; };
 		4232813B22FDA956006A11FB /* LoadMoreControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadMoreControl.swift; sourceTree = "<group>"; };
 		4236733D22F6116000A775BD /* MedicalSuppliesInteractorIO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicalSuppliesInteractorIO.swift; sourceTree = "<group>"; };
@@ -192,6 +195,8 @@
 			children = (
 				42124DD92300AB7500365B6C /* CustomView.swift */,
 				42124DDC2300AC4700365B6C /* CustomStackView.swift */,
+				42A1679122FB657700A1DEE5 /* ImageViewExtented.swift */,
+				42217B32230163160080A86E /* UIViewController+Alerts.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -264,7 +269,6 @@
 				42124DD82300AB6600365B6C /* Views */,
 				424F73CB22FAEFFD00BA8904 /* Array+Extensions.swift */,
 				424F73D022FAF0D400BA8904 /* Copying+Copy.swift */,
-				42A1679122FB657700A1DEE5 /* ImageViewExtented.swift */,
 				421FF98922F6E1C0009005A7 /* NSError+Extention.swift */,
 			);
 			path = Extensions;
@@ -684,6 +688,7 @@
 				42124DD62300A5D800365B6C /* MedicalSuppliesViewController+HUD.swift in Sources */,
 				42A3655F22F4E50C0090CF4B /* MedicalSuppliesView.swift in Sources */,
 				4232813C22FDA956006A11FB /* LoadMoreControl.swift in Sources */,
+				42217B33230163160080A86E /* UIViewController+Alerts.swift in Sources */,
 				427050F922F485D300A7BD9E /* MedicalSuppliesPresenter.swift in Sources */,
 				426CF7CE22E9F23600DF76B2 /* storemed.xcdatamodeld in Sources */,
 				427050FB22F485F200A7BD9E /* MedicalSuppliesInteractor.swift in Sources */,
@@ -711,6 +716,7 @@
 				421E265022F84E3A005C91C9 /* NSError+Extention.swift in Sources */,
 				421E265822F84E54005C91C9 /* MedicalSuppliesView.swift in Sources */,
 				421E265622F84E4C005C91C9 /* App.swift in Sources */,
+				42217B34230163160080A86E /* UIViewController+Alerts.swift in Sources */,
 				421E266122F84E68005C91C9 /* MedicalSuppliesPresenter.swift in Sources */,
 				421E264E22F84E33005C91C9 /* ColorsConfig.swift in Sources */,
 				421E265D22F84E61005C91C9 /* MedicalSuppliesApi.swift in Sources */,
