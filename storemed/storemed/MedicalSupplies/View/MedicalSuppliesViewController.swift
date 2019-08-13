@@ -129,7 +129,6 @@ extension MedicalSuppliesViewController: UISearchBarDelegate {
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         searchBar.resignFirstResponder()
-        showHUD()
         updateView()
     }
     
