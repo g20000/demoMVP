@@ -12,6 +12,9 @@ class MedicalSuppliesViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     
+    @IBOutlet weak var viewEmptyData: UIView!
+    @IBOutlet weak var labelEmptyDataInfo: UILabel!
+    
     var presenter = MedicalSuppliesPresenter()
     
     private var searchController: UISearchController!
@@ -111,13 +114,30 @@ extension MedicalSuppliesViewController: MedicalSuppliesView {
     
     func showMedicalSupplies(_ medicalSupplies: Array<MedicalSupplyItem>?) {
         hideHUD()
+        hideEmptyDataViewFromScreen()
         self.items.append(contentsOf: medicalSupplies!)
         tableView.reloadData()
     }
     
     func showErrorInfo(title: String?, description: String?) {
         hideHUD()
+        hideEmptyDataViewFromScreen()
         showErrorViewController(title: title!, description: description)
+    }
+    
+    func showEmptyDataView(title: String?) {
+        showEmptyDataViewOnScreen(title: title)
+    }
+    
+    private func showEmptyDataViewOnScreen(title: String?) {
+        hideHUD()
+        viewEmptyData.isHidden = false
+        view.bringSubviewToFront(viewEmptyData)
+    }
+    
+    private func hideEmptyDataViewFromScreen() {
+        viewEmptyData.isHidden = true
+        view.sendSubviewToBack(viewEmptyData)
     }
     
 }

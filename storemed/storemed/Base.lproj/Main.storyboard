@@ -25,6 +25,24 @@
                                         <rect key="frame" x="150" y="218" width="20" height="20"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </activityIndicatorView>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="amV-SK-Qad" userLabel="View Empty Data">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="457"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Пусто" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iXF-DZ-dGq">
+                                                <rect key="frame" x="136.5" y="218.5" width="47.5" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstItem="iXF-DZ-dGq" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="amV-SK-Qad" secondAttribute="leading" constant="5" id="Fg7-5W-Xn0"/>
+                                            <constraint firstItem="iXF-DZ-dGq" firstAttribute="centerX" secondItem="amV-SK-Qad" secondAttribute="centerX" id="PzG-YY-iQx"/>
+                                            <constraint firstItem="iXF-DZ-dGq" firstAttribute="centerY" secondItem="amV-SK-Qad" secondAttribute="centerY" id="T38-tD-bMw"/>
+                                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="iXF-DZ-dGq" secondAttribute="trailing" constant="5" id="aon-UA-PDJ"/>
+                                        </constraints>
+                                    </view>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="vxJ-Ks-jFV">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="457"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -237,10 +255,14 @@
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="amV-SK-Qad" secondAttribute="bottom" id="3G1-iP-8eP"/>
+                                    <constraint firstItem="amV-SK-Qad" firstAttribute="leading" secondItem="Hxe-4B-220" secondAttribute="leading" id="RIr-mG-tTK"/>
                                     <constraint firstAttribute="trailing" secondItem="vxJ-Ks-jFV" secondAttribute="trailing" id="ZCx-wt-GFS"/>
+                                    <constraint firstItem="amV-SK-Qad" firstAttribute="top" secondItem="Hxe-4B-220" secondAttribute="top" id="fQ0-Ns-ksj"/>
                                     <constraint firstAttribute="bottom" secondItem="vxJ-Ks-jFV" secondAttribute="bottom" id="k5k-vZ-eE8"/>
                                     <constraint firstItem="vxJ-Ks-jFV" firstAttribute="leading" secondItem="Hxe-4B-220" secondAttribute="leading" id="kDT-98-x7c"/>
                                     <constraint firstItem="vxJ-Ks-jFV" firstAttribute="top" secondItem="Hxe-4B-220" secondAttribute="top" id="mCB-pG-HF9"/>
+                                    <constraint firstAttribute="trailing" secondItem="amV-SK-Qad" secondAttribute="trailing" id="ygJ-1L-JNQ"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -255,7 +277,9 @@
                     </view>
                     <navigationItem key="navigationItem" title="Мое здоровье" id="KXL-Ru-X9C"/>
                     <connections>
+                        <outlet property="labelEmptyDataInfo" destination="iXF-DZ-dGq" id="wcd-yf-p1g"/>
                         <outlet property="tableView" destination="vxJ-Ks-jFV" id="d8U-V1-prg"/>
+                        <outlet property="viewEmptyData" destination="amV-SK-Qad" id="VdO-H5-X3E"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

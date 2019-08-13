@@ -45,7 +45,12 @@ extension MedicalSuppliesPresenter: MedicalSuppliesInteractorOutput {
             medicalSupplyItem.price = medicalSupply.price!.description + " Р"
             return medicalSupplyItem
             })!
-        view?.showMedicalSupplies(medicalSuppliesItems)
+        
+        if medicalSuppliesItems.count > 0 {
+            view?.showMedicalSupplies(medicalSuppliesItems)
+        } else {
+            view?.showEmptyDataView(title: "Пусто")
+        }
     }
     
 }
