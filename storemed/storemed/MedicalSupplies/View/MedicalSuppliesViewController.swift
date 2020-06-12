@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import EasyDi
 
 class MedicalSuppliesViewController: UIViewController {
     
@@ -15,7 +16,7 @@ class MedicalSuppliesViewController: UIViewController {
     @IBOutlet weak var viewEmptyData: UIView!
     @IBOutlet weak var labelEmptyDataInfo: UILabel!
     
-    var presenter = MedicalSuppliesPresenter()
+    var presenter: MedicalSuppliesPresenter?
     
     private var searchController: UISearchController!
     
@@ -50,7 +51,7 @@ class MedicalSuppliesViewController: UIViewController {
     
     private func updateView() {
         showHUD()
-        presenter.updateView(searchController.searchBar.text!.trimmingCharacters(in: .whitespaces))
+        presenter?.updateView(searchController.searchBar.text!.trimmingCharacters(in: .whitespaces))
     }
     
 }
@@ -114,31 +115,31 @@ extension MedicalSuppliesViewController: MedicalSuppliesView {
     
     func showMedicalSupplies(_ medicalSupplies: Array<MedicalSupplyItem>?) {
         hideHUD()
-        hideEmptyDataViewFromScreen()
+        //hideEmptyDataViewFromScreen()
         self.items.append(contentsOf: medicalSupplies!)
         tableView.reloadData()
     }
     
     func showErrorInfo(title: String?, description: String?) {
         hideHUD()
-        hideEmptyDataViewFromScreen()
+        //hideEmptyDataViewFromScreen()
         showErrorViewController(title: title!, description: description)
     }
     
     func showEmptyDataView(title: String?) {
-        showEmptyDataViewOnScreen(title: title)
+        //showEmptyDataViewOnScreen(title: title)
     }
     
-    private func showEmptyDataViewOnScreen(title: String?) {
-        hideHUD()
-        viewEmptyData.isHidden = false
-        view.bringSubviewToFront(viewEmptyData)
-    }
-    
-    private func hideEmptyDataViewFromScreen() {
-        viewEmptyData.isHidden = true
-        view.sendSubviewToBack(viewEmptyData)
-    }
+//    private func showEmptyDataViewOnScreen(title: String?) {
+//        hideHUD()
+//        viewEmptyData.isHidden = false
+//        view.bringSubviewToFront(viewEmptyData)
+//    }
+//
+//    private func hideEmptyDataViewFromScreen() {
+//        viewEmptyData.isHidden = true
+//        view.sendSubviewToBack(viewEmptyData)
+//    }
     
 }
 
