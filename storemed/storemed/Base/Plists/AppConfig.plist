@@ -5,9 +5,7 @@
 	<key>network_settings</key>
 	<dict>
 		<key>api_url</key>
-		<string>https://moezdorovie.ru/api/v2test/medicament/</string>
-		<key>token</key>
-		<string>95cc5d31-aca0-4206-b45f-f5480c332a93</string>
+		<string>https://newsapi.org/v2/everything?q=android&amp;from=2019-04-00&amp;sortBy=publishedAt&amp;apiKey=26eddb253e7840f988aec61f2ece2907&amp;page=1</string>
 	</dict>
 </dict>
 </plist>

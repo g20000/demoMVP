@@ -39,10 +39,6 @@ class BaseApi: NSObject {
     
     open func request(method: HTTPMethod, url: String, parameters: [String: Any]?, encoding: ParameterEncoding?, success: @escaping ((_ data: Any, _ code: Int? ) -> Swift.Void), failure: @escaping ((_ error: NSError) -> Swift.Void)) -> DataRequest?  {
         
-//        let configuration = URLSessionConfiguration.default
-//        configuration.timeoutIntervalForRequest = 120;
-//        let manager = Alamofire.SessionManager(configuration: configuration)
-//
         guard let serverUrl = App.shared.appConfig?.networkSettings?.apiUrlString else {
             failure(NSErrorFrom(message: "API Error"))
             return nil
@@ -65,9 +61,6 @@ class BaseApi: NSObject {
     }
     
     open func request(method: HTTPMethod, url: String, fileData: Data?, fileName: String?, fileType: String?, parameters: [String: Any]?, success: @escaping ((_ data: Any, _ code: Int? ) -> Swift.Void), failure: @escaping ((_ error: NSError) -> Swift.Void), encodingCompletion: ((_ request: UploadRequest) -> Swift.Void)?)  {
-//        let configuration = URLSessionConfiguration.default
-//        configuration.timeoutIntervalForRequest = 120;
-//        let manager = Alamofire.SessionManager(configuration: configuration)
         
         guard let serverUrl = App.shared.appConfig?.networkSettings?.apiUrlString else {
             failure(NSErrorFrom(message: "API Error"))

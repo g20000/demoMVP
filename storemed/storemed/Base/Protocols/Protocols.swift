@@ -7,5 +7,15 @@
 //
 
 protocol Copying {
+    
     init(original: Self)
+    
+}
+
+protocol Responsable: Codable {
+    
+    var status: String? { get set }
+    var code: Int? { get set }
+    var message: String? { get set }
+    
 }

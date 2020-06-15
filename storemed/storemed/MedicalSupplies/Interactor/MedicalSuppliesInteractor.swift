@@ -21,8 +21,9 @@ extension MedicalSuppliesInteractor: MedicalSuppliesInteractorInput {
         filter.query = query
         
         let requiredPageNumber = currentPageNumber + 1
-        _ = MedicalSuppliesApi().loadMedicalSupplies(page: requiredPageNumber, filter: filter, success: { page in
-            self.output?.sendPageCopy(page?.copy())
+        _ = NewsApi().loadNews(page: requiredPageNumber, filter: filter, success: { page in
+            //self.output?.sendPageCopy(page?.copy())
+            print("")
         }, failure: { error in
             self.output?.sendErrorInfo(error.description)
         })

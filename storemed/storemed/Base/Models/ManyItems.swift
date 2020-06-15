@@ -8,16 +8,19 @@
 
 import Foundation
 
-class ManyItems<Type: Codable >: NSObject, Codable {
+class ManyItems<Type: Codable >: NSObject, Responsable {
     
+    var status: String?
+    var code: Int?
+    var message: String?
     var count: Int?
     var total: Int?
     var items: [Type]?
     
     enum CodingKeys: String, CodingKey {
+        case status = "status"
         case count
         case total
-        case items
+        case items = "articles"
     }
-    
 }

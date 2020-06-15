@@ -8,10 +8,10 @@
 
 import Alamofire
 
-class MedicalSuppliesApi: BaseApi {
+class NewsApi: BaseApi {
 
-    func loadMedicalSupplies(page: Int, filter: Filter, success: @escaping ((_ data: Page?) -> Void), failure: @escaping ((_ error: NSError) -> Void)) -> DataRequest? {
-        return self.request(method: .get, url: "", parameters:["page": page, "filter": ["perPage": filter.amountOfItems], "q": filter.query], success: { (rawData, code) in
+    func loadNews(page: Int, filter: Filter, success: @escaping ((_ data: [Articles]?) -> Void), failure: @escaping ((_ error: NSError) -> Void)) -> DataRequest? {
+        return self.request(method: .get, url: "", parameters: nil, success: { (rawData, code) in
             guard let data = rawData as? Data else {
                 failure(NSError(domain: "", code: -1, userInfo: [NSLocalizedDescriptionKey : "Invalid response"]))
                 return
@@ -19,9 +19,9 @@ class MedicalSuppliesApi: BaseApi {
             let decoder = JSONDecoder()
             decoder.dateDecodingStrategy = .millisecondsSince1970
             do {
-                let response = try decoder.decode(ResponseModel<Page>.self, from: data)
+                let response = try decoder.decode(ManyItems<Articles>.self, from: data)
                 if response.status == "ok" {
-                    success(response.result)
+                    success(response.items)
                 } else {
                     failure(NSError(domain: "", code: -1, userInfo: [NSLocalizedDescriptionKey : response.message ?? "Invalid response"]))
                 }

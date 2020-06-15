@@ -70,5 +70,4 @@ class App: NSObject {
         
     }
     
-
 }

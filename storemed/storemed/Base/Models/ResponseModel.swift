@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ResponseModel<Item: Codable>: NSObject, Codable {
+class ResponseModel<Item: Codable>: NSObject, Responsable {   
     
     var status: String?
     var code: Int?
