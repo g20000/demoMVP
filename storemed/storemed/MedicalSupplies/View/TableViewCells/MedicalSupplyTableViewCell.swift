@@ -10,13 +10,10 @@ import UIKit
 
 class MedicalSupplyTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var labelPercent: UILabel!
     @IBOutlet weak var labelTitle: UILabel!
-    @IBOutlet weak var imageViewMedicalSupply: UIImageView!
-    @IBOutlet weak var labelSubstance: UILabel!
-    @IBOutlet weak var labelProducer: UILabel!
-    @IBOutlet weak var labelRealPrice: UILabel!
-    @IBOutlet weak var labelDiscountPrice: UILabel!
+    @IBOutlet weak var imageViewNewsItem: UIImageView!
+    @IBOutlet weak var labelDescription: UILabel!
+    @IBOutlet weak var labelDate: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()

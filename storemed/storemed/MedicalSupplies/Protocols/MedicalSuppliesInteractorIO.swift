@@ -10,13 +10,13 @@ import Foundation
 
 protocol MedicalSuppliesInteractorInput: AnyObject {
     
-    func requestMedicalSupplies(_ query: String, currentPageNumber: Int)
+    func requestMedicalSupplies()
     
 }
 
 protocol MedicalSuppliesInteractorOutput: AnyObject {
     
-    func sendPageCopy(_ page: Page?)
+    func sendNewsCopy(_ articles: [Article]?)
     func sendErrorInfo(_ errorInfo: String?)
     
 }

@@ -10,7 +10,7 @@ import Alamofire
 
 class NewsApi: BaseApi {
 
-    func loadNews(page: Int, filter: Filter, success: @escaping ((_ data: [Articles]?) -> Void), failure: @escaping ((_ error: NSError) -> Void)) -> DataRequest? {
+    func loadNews(success: @escaping ((_ data: [Article]?) -> Void), failure: @escaping ((_ error: NSError) -> Void)) -> DataRequest? {
         return self.request(method: .get, url: "", parameters: nil, success: { (rawData, code) in
             guard let data = rawData as? Data else {
                 failure(NSError(domain: "", code: -1, userInfo: [NSLocalizedDescriptionKey : "Invalid response"]))
@@ -19,7 +19,7 @@ class NewsApi: BaseApi {
             let decoder = JSONDecoder()
             decoder.dateDecodingStrategy = .millisecondsSince1970
             do {
-                let response = try decoder.decode(ManyItems<Articles>.self, from: data)
+                let response = try decoder.decode(ManyItems<Article>.self, from: data)
                 if response.status == "ok" {
                     success(response.items)
                 } else {

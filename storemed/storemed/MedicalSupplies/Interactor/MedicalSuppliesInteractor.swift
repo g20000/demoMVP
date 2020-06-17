@@ -16,13 +16,9 @@ class MedicalSuppliesInteractor: NSObject {
 
 extension MedicalSuppliesInteractor: MedicalSuppliesInteractorInput {
     
-    func requestMedicalSupplies(_ query: String, currentPageNumber: Int) {
-        var filter = Filter()
-        filter.query = query
-        
-        let requiredPageNumber = currentPageNumber + 1
-        _ = NewsApi().loadNews(page: requiredPageNumber, filter: filter, success: { page in
-            //self.output?.sendPageCopy(page?.copy())
+    func requestMedicalSupplies() {
+        _ = NewsApi().loadNews( success: { articles in
+            self.output?.sendNewsCopy(articles)
             print("")
         }, failure: { error in
             self.output?.sendErrorInfo(error.description)

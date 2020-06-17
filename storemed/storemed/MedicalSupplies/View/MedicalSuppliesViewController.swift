@@ -20,7 +20,7 @@ class MedicalSuppliesViewController: UIViewController {
     
     private var searchController: UISearchController!
     
-    internal var items = Array<MedicalSupplyItem>()
+    internal var items = Array<ArticleItem>()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -81,24 +81,21 @@ extension MedicalSuppliesViewController: UITableViewDelegate, UITableViewDataSou
     
     private func prepareMedicalSupplyTableViewCell(_ tableView: UITableView, indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell") as! MedicalSupplyTableViewCell
-        let medicalSupply = medicalSupplyByIndexPath(indexPath)
+        let article = articleByIndexPath(indexPath)
         
-        cell.labelPercent.text = medicalSupply?.percent
-        cell.labelTitle.text = medicalSupply?.title
-        cell.imageViewMedicalSupply.sd_setImage(withStringUrl: medicalSupply?.image, placeholderImage: UIImage(named: "placeholder"), completed: nil)
-        cell.labelSubstance.text = medicalSupply?.substance
-        cell.labelProducer.text = medicalSupply?.producer
-        cell.labelRealPrice.attributedText = medicalSupply?.rawPrice
-        cell.labelDiscountPrice.text = medicalSupply?.price
+        cell.labelTitle.text = article?.title
+        cell.imageViewNewsItem.sd_setImage(withStringUrl: article?.imageItem, placeholderImage: UIImage(named: "placeholder"), completed: nil)
+        cell.labelDescription.text = article?.descriptionItem
+        cell.labelDate.text = article?.date
         
         return cell
     }
     
-    private func medicalSupplyByIndexPath(_ indexPath: IndexPath) -> MedicalSupplyItem? {
-        return medicalSupplyByIndex(indexPath.row)
+    private func articleByIndexPath(_ indexPath: IndexPath) -> ArticleItem? {
+        return articleByIndex(indexPath.row)
     }
     
-    private func medicalSupplyByIndex(_ index: Int) -> MedicalSupplyItem? {
+    private func articleByIndex(_ index: Int) -> ArticleItem? {
         if index < self.items.count {
             return self.items[index]
         }
@@ -113,7 +110,7 @@ extension MedicalSuppliesViewController: UITableViewDelegate, UITableViewDataSou
 
 extension MedicalSuppliesViewController: MedicalSuppliesView {
     
-    func showMedicalSupplies(_ medicalSupplies: Array<MedicalSupplyItem>?) {
+    func showMedicalSupplies(_ medicalSupplies: Array<ArticleItem>?) {
         hideHUD()
         //hideEmptyDataViewFromScreen()
         self.items.append(contentsOf: medicalSupplies!)

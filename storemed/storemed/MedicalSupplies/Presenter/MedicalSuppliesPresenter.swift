@@ -13,37 +13,32 @@ class MedicalSuppliesPresenter: NSObject {
     var view: MedicalSuppliesView?
     var interactor: MedicalSuppliesInteractorInput?
     
-    private var page: Page?
+    private var articles: [Article]?
     
     func updateView(_ query: String) {
-        let currentPageNumber = (page != nil) ? page?.pageNumber : 0
-        interactor?.requestMedicalSupplies(query, currentPageNumber: currentPageNumber!)
+        interactor?.requestMedicalSupplies()
     }
     
 }
 
 extension MedicalSuppliesPresenter: MedicalSuppliesInteractorOutput {
-    
+        
     func sendErrorInfo(_ errorInfo: String?) {
         view?.showErrorInfo(title: "Ошибка", description: errorInfo)
     }
     
-    func sendPageCopy(_ page: Page?) {
-        self.page = page
-        showMedicalSupplies(self.page?.items)
+    func sendNewsCopy(_ articles: [Article]?) {
+        showNews(articles)
     }
     
-    private func showMedicalSupplies(_ items: Array<MedicalSupply>?) {
-        let medicalSuppliesItems: [MedicalSupplyItem] = (items?.compactMap{ medicalSupply in
-            let medicalSupplyItem = MedicalSupplyItem()
-            medicalSupplyItem.percent = "-" + String(Int((Float(medicalSupply.price!) / Float(medicalSupply.rawPrice!) * 100))) + "%"
-            medicalSupplyItem.image = medicalSupply.image
-            medicalSupplyItem.title = medicalSupply.title
-            medicalSupplyItem.substance = medicalSupply.substance
-            medicalSupplyItem.producer = medicalSupply.producer
-            medicalSupplyItem.rawPrice = String(medicalSupply.rawPrice!.description + " Р").strikeThrough()
-            medicalSupplyItem.price = medicalSupply.price!.description + " Р"
-            return medicalSupplyItem
+    private func showNews(_ items: Array<Article>?) {
+        let medicalSuppliesItems: [ArticleItem] = (items?.compactMap{ article in
+            let articleItem = ArticleItem()
+            articleItem.title = article.title
+            articleItem.imageItem = article.urlToImage
+            articleItem.descriptionItem = article.description
+            articleItem.date = article.publishedAt
+            return articleItem
             })!
         
         if medicalSuppliesItems.count > 0 {

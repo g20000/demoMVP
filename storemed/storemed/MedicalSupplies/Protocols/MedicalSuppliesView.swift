@@ -10,7 +10,7 @@ import Foundation
 
 protocol MedicalSuppliesView: AnyObject {
     
-    func showMedicalSupplies(_ medicalSupplies: Array<MedicalSupplyItem>?)
+    func showMedicalSupplies(_ medicalSupplies: Array<ArticleItem>?)
     func showErrorInfo(title: String?, description: String?)
     func showEmptyDataView(title: String?)
     
