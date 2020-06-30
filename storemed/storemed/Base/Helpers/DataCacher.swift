@@ -41,15 +41,28 @@ class DataCacher: NSObject, Cachable {
         }
     }
     
-    func makeRecord(_ articles: [ArticleItemData]) {
-        
+    func makeRecord(_ articles: [ArticleItem]) {
+        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+        for article in articles {
+            let articleItemData = ArticleItemData()
+            articleItemData.title = article.title
+            articleItemData.descriptionItem = article.descriptionItem
+            articleItemData.date = Date()
+            articleItemData.imageItem = article.imageItem
+        }
+        do {
+            try context.save()
+            print("Success")
+        } catch {
+            print("Error saving: \(error)")
+        }
     }
     
     func refresh() {
         guard isAvailableRecords else { return }
         
         deleteAllRecords()
-        makeRecord([ArticleItemData]())
+        makeRecord([ArticleItem]())
     }
     
 }
