@@ -31,7 +31,7 @@ protocol Cachable {
     
     func loadRecords() -> [ArticleItemData]?
     func deleteAllRecords()
-    func makeRecord(_ articles: [ArticleItemData])
+    func makeRecord(_ articles: [ArticleItem])
     func refresh()
     
 }

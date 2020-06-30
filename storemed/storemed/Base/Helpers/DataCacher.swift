@@ -43,7 +43,7 @@ class DataCacher: NSObject, Cachable {
     
     func makeRecord(_ articles: [ArticleItem]) {
         let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-        for article in articles {
+        for article in articles {//TODO: change to map
             let articleItemData = ArticleItemData()
             articleItemData.title = article.title
             articleItemData.descriptionItem = article.descriptionItem
