@@ -27,10 +27,21 @@ class DataCacher: NSObject, Cachable {
     }
     
     func deleteAllRecords() {
-        
+        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+        let deleteFetch = NSFetchRequest<NSFetchRequestResult>(entityName: "ArticleItemData")
+        let deleteRequest = NSBatchDeleteRequest(fetchRequest: deleteFetch)
+        do
+        {
+            try context.execute(deleteRequest)
+            try context.save()
+        }
+        catch
+        {
+            print("There was an error")
+        }
     }
     
-    func makeRecord() {
+    func makeRecord(_ articles: [ArticleItemData]) {
         
     }
     
@@ -38,7 +49,7 @@ class DataCacher: NSObject, Cachable {
         guard isAvailableRecords else { return }
         
         deleteAllRecords()
-        makeRecord()
+        makeRecord([ArticleItemData]())
     }
     
 }
