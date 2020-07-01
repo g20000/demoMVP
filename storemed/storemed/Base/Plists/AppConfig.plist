@@ -5,7 +5,7 @@
 	<key>network_settings</key>
 	<dict>
 		<key>api_url</key>
-		<string>https://newsapi.org/v2/everything?q=android&amp;from=2019-04-00&amp;sortBy=publishedAt&amp;apiKey=26eddb253e7840f988aec61f2ece2907&amp;page=1</string>
+		<string>https://newsapi.org/v2/everything?q=android&amp;from=2019-04-00&amp;sortBy=publishedAt&amp;apiKey=26eddb253e7840f988aec61f2ece2907&amp;page=</string>
 	</dict>
 </dict>
 </plist>

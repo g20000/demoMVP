@@ -35,3 +35,7 @@ protocol Cachable {
     func refresh()
     
 }
+
+protocol Paginable {
+    var currentPageNumber: Int { get set }
+}

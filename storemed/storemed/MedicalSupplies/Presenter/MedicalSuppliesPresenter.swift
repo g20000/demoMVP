@@ -8,15 +8,17 @@
 
 import UIKit
 
-class MedicalSuppliesPresenter: NSObject {
+class MedicalSuppliesPresenter: NSObject, Paginable {
     
     var view: MedicalSuppliesView?
     var interactor: MedicalSuppliesInteractorInput?
     
     private var articles: [Article]?
     
-    func updateView(_ query: String) {
-        interactor?.requestMedicalSupplies()
+    internal var currentPageNumber = 1
+    
+    func updateView() {
+        interactor?.requestMedicalSupplies(currentPageNumber: currentPageNumber)
     }
     
 }

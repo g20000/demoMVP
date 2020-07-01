@@ -12,7 +12,9 @@ For support, please feel free to contact me at https://www.linkedin.com/in/syeda
 */
 
 import Foundation
+
 struct Article : Codable {
+    
 	let source : Source?
 	let author : String?
 	let title : String?

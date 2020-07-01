@@ -9,9 +9,10 @@
 import Alamofire
 
 class NewsApi: BaseApi {
-
-    func loadNews(success: @escaping ((_ data: [Article]?) -> Void), failure: @escaping ((_ error: NSError) -> Void)) -> DataRequest? {
-        return self.request(method: .get, url: "", parameters: nil, success: { (rawData, code) in
+    
+    func loadNews(page: Int, success: @escaping ((_ data: [Article]?) -> Void), failure: @escaping ((_ error: NSError) -> Void)) -> DataRequest? {
+        
+        return self.request(method: .get, url: "\(page)", parameters: nil, success: { (rawData, code) in
             guard let data = rawData as? Data else {
                 failure(NSError(domain: "", code: -1, userInfo: [NSLocalizedDescriptionKey : "Invalid response"]))
                 return

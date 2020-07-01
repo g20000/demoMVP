@@ -8,7 +8,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Мое здоровье-->
+        <!--Новости-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController storyboardIdentifier="Medical Supplies" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" customClass="MedicalSuppliesViewController" customModule="storemed" customModuleProvider="target" sceneMemberID="viewController">
@@ -157,6 +157,85 @@
                                             <outlet property="labelTitle" destination="3sW-s0-qVF" id="4jk-nA-kKh"/>
                                         </connections>
                                     </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell no network" id="xWG-Jl-pOq">
+                                        <rect key="frame" x="0.0" y="298" width="320" height="60"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="xWG-Jl-pOq" id="4EH-Hu-VNk">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="60"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lYO-6G-CRv" userLabel="Editable Content View" customClass="CustomView" customModule="storemed" customModuleProvider="target">
+                                                    <rect key="frame" x="5" y="5" width="310" height="50"/>
+                                                    <subviews>
+                                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="zcA-jG-XIu">
+                                                            <rect key="frame" x="0.0" y="0.0" width="310" height="50"/>
+                                                            <subviews>
+                                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ak6-y8-V5f" userLabel="Percent Container">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="310" height="50"/>
+                                                                    <subviews>
+                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Нет сети" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sc4-zE-UcE">
+                                                                            <rect key="frame" x="5" y="5" width="70" height="40"/>
+                                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                            <color key="textColor" red="1" green="0.23137254900000001" blue="0.23921568630000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                            <nil key="highlightedColor"/>
+                                                                        </label>
+                                                                    </subviews>
+                                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="bottom" secondItem="sc4-zE-UcE" secondAttribute="bottom" constant="5" id="BHJ-1M-4Da"/>
+                                                                        <constraint firstItem="sc4-zE-UcE" firstAttribute="top" secondItem="ak6-y8-V5f" secondAttribute="top" constant="5" id="MIi-ZA-rzk"/>
+                                                                        <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="sc4-zE-UcE" secondAttribute="trailing" constant="5" id="cL7-Ba-NNe"/>
+                                                                        <constraint firstItem="sc4-zE-UcE" firstAttribute="leading" secondItem="ak6-y8-V5f" secondAttribute="leading" constant="5" id="oiD-rC-J2u"/>
+                                                                    </constraints>
+                                                                </view>
+                                                            </subviews>
+                                                            <userDefinedRuntimeAttributes>
+                                                                <userDefinedRuntimeAttribute type="boolean" keyPath="cornerRadiusHalf" value="YES"/>
+                                                                <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                                    <real key="value" value="1"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                                <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                                    <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                                <userDefinedRuntimeAttribute type="boolean" keyPath="roundForTopCorners" value="YES"/>
+                                                            </userDefinedRuntimeAttributes>
+                                                        </stackView>
+                                                    </subviews>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <constraints>
+                                                        <constraint firstItem="zcA-jG-XIu" firstAttribute="leading" secondItem="lYO-6G-CRv" secondAttribute="leading" id="IB6-ui-xXa"/>
+                                                        <constraint firstAttribute="bottom" secondItem="zcA-jG-XIu" secondAttribute="bottom" id="cpC-Uf-ev7"/>
+                                                        <constraint firstAttribute="trailing" secondItem="zcA-jG-XIu" secondAttribute="trailing" id="ogS-Ds-5MV"/>
+                                                        <constraint firstItem="zcA-jG-XIu" firstAttribute="top" secondItem="lYO-6G-CRv" secondAttribute="top" id="uoy-Ou-A3v"/>
+                                                    </constraints>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="cornerRadiusHalf" value="NO"/>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                            <real key="value" value="1"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                            <color key="value" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="roundForTopCorners" value="NO"/>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                            <real key="value" value="10"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                </view>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <constraints>
+                                                <constraint firstItem="lYO-6G-CRv" firstAttribute="top" secondItem="4EH-Hu-VNk" secondAttribute="top" constant="5" id="9gc-Xg-cTs"/>
+                                                <constraint firstItem="lYO-6G-CRv" firstAttribute="leading" secondItem="4EH-Hu-VNk" secondAttribute="leading" constant="5" id="B93-Ls-UAT"/>
+                                                <constraint firstAttribute="trailing" secondItem="lYO-6G-CRv" secondAttribute="trailing" constant="5" id="XeC-xh-zUj"/>
+                                                <constraint firstAttribute="bottom" secondItem="lYO-6G-CRv" secondAttribute="bottom" constant="5" id="iJJ-p0-BZ0"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <connections>
+                                            <outlet property="labelTitle" destination="sc4-zE-UcE" id="hpy-4W-Fcd"/>
+                                        </connections>
+                                    </tableViewCell>
                                 </prototypes>
                                 <connections>
                                     <outlet property="dataSource" destination="BYZ-38-t0r" id="Qpp-aA-nG8"/>
@@ -173,7 +252,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Мое здоровье" id="KXL-Ru-X9C"/>
+                    <navigationItem key="navigationItem" title="Новости" id="KXL-Ru-X9C"/>
                     <connections>
                         <outlet property="tableView" destination="vxJ-Ks-jFV" id="d8U-V1-prg"/>
                     </connections>

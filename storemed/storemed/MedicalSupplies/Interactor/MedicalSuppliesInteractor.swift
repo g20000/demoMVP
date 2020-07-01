@@ -16,10 +16,12 @@ class MedicalSuppliesInteractor: NSObject {
 
 extension MedicalSuppliesInteractor: MedicalSuppliesInteractorInput {
     
-    func requestMedicalSupplies() {
-        _ = NewsApi().loadNews( success: { articles in
+    func requestMedicalSupplies(currentPageNumber: Int) {
+        let requiredPageNumber = currentPageNumber + 1
+        guard requiredPageNumber <= 5 else { return }
+        
+        _ = NewsApi().loadNews(page: requiredPageNumber, success: { articles in
             self.output?.sendNewsCopy(articles)
-            print("")
         }, failure: { error in
             self.output?.sendErrorInfo(error.description)
         })

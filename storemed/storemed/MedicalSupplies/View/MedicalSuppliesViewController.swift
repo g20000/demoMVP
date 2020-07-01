@@ -26,34 +26,20 @@ class MedicalSuppliesViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureViews()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         updateView()
     }
     
     private func configureViews() {
         showAlert()
-        configureSearchViewController()
-    }
-    
-    private func configureSearchViewController() {
-        searchController = UISearchController(searchResultsController: nil)
-        searchController.searchBar.autocapitalizationType = .none
-        
-        if #available(iOS 11.0, *) {
-            navigationItem.searchController = searchController
-            navigationItem.hidesSearchBarWhenScrolling = false
-        } else {
-            tableView.tableHeaderView = searchController.searchBar
-        }
-        
-        searchController.dimsBackgroundDuringPresentation = false
-        searchController.searchBar.delegate = self
-        searchController.searchBar.placeholder = "Я ищу"
-        definesPresentationContext = true
     }
     
     private func updateView() {
         showHUD()
-        presenter?.updateView(searchController.searchBar.text!.trimmingCharacters(in: .whitespaces))
+        presenter?.updateView()
     }
     
 }
@@ -155,7 +141,7 @@ extension MedicalSuppliesViewController: UISearchBarDelegate {
 
 
 //MARK: - is network abailable
-
+//TODO: move to manager
 extension MedicalSuppliesViewController {
 
     func isInternetAvailable() -> Bool {

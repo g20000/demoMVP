@@ -10,7 +10,7 @@ import Foundation
 
 protocol MedicalSuppliesInteractorInput: AnyObject {
     
-    func requestMedicalSupplies()
+    func requestMedicalSupplies(currentPageNumber: Int)
     
 }
 
