@@ -15,9 +15,15 @@ class MedicalSuppliesPresenter: NSObject, Paginable {
     
     private var articles: [Article]?
     
-    internal var currentPageNumber = 1
+    internal var currentPageNumber = 0
     
     func updateView() {
+        let requiredPageNumber = currentPageNumber + 1
+        
+        guard requiredPageNumber <= 5 else { return }
+        
+        currentPageNumber = requiredPageNumber
+        
         interactor?.requestMedicalSupplies(currentPageNumber: currentPageNumber)
     }
     

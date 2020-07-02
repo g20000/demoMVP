@@ -11,6 +11,7 @@ pod 'SDWebImage'
 pod 'EasyDi'
 pod 'Fabric'
 pod 'Crashlytics'
+pod 'SwiftyBeaver', '~> 1.7.0'
 
 target 'storemedTests' do
 inherit! :search_paths
