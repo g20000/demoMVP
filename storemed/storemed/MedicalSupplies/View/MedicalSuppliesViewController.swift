@@ -105,6 +105,10 @@ extension MedicalSuppliesViewController: MedicalSuppliesView {
         tableView.reloadData()
     }
     
+    func stopLoading() {
+        hideHUD()
+    }
+    
     func showErrorInfo(title: String?, description: String?) {
         hideHUD()
         //hideEmptyDataViewFromScreen()

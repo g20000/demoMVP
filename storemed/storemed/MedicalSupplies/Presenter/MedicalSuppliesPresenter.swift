@@ -20,7 +20,10 @@ class MedicalSuppliesPresenter: NSObject, Paginable {
     func updateView() {
         let requiredPageNumber = currentPageNumber + 1
         
-        guard requiredPageNumber <= 5 else { return }
+        guard requiredPageNumber <= 5 else {
+            self.view?.stopLoading()
+            return
+        }
         
         currentPageNumber = requiredPageNumber
         
