@@ -13,13 +13,12 @@ class DataCacher: NSObject, Cachable {
     
     var isAvailableRecords: Bool = true
     var cacheLimit: Int = 5
-    var managedContext: NSManagedObjectContext?
     
     func loadRecords() -> [ArticleItemData]? {
+        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
         let fetch: NSFetchRequest<ArticleItemData> = ArticleItemData.fetchRequest()
-        fetch.predicate = NSPredicate()
         do {
-            return try managedContext?.fetch(fetch)
+            return try context.fetch(fetch)
         } catch let error as NSError {
             print("Ошибка выборки: \(error) описание: \(error.userInfo)")
             return nil
@@ -45,7 +44,7 @@ class DataCacher: NSObject, Cachable {
         let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
         
         let _: [ArticleItemData] = (articles.compactMap{ article in
-            let articleItemData = ArticleItemData()
+            let articleItemData = ArticleItemData(context: context)
             articleItemData.title = article.title
             articleItemData.imageItem = article.imageItem
             articleItemData.descriptionItem = article.description
@@ -61,11 +60,20 @@ class DataCacher: NSObject, Cachable {
         }
     }
     
-    func refresh(with: [Article]) {
-        guard isAvailableRecords else { return }
+    func refresh(items: [Article]) {
+        //guard isAvailableRecords else { return }
         
         deleteAllRecords()
-        makeRecord([ArticleItem]())
+        
+        let medicalSuppliesItems: [ArticleItem] = items.compactMap{ article in
+            let articleItem = ArticleItem()
+            articleItem.title = article.title
+            articleItem.imageItem = article.urlToImage
+            articleItem.descriptionItem = article.description
+            articleItem.date = article.publishedAt
+            return articleItem
+        }
+        makeRecord(medicalSuppliesItems)
     }
     
 }

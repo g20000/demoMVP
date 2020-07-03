@@ -15,7 +15,6 @@ protocol MedicalSuppliesInteractorInput: AnyObject {
 }
 
 protocol MedicalSuppliesInteractorOutput: AnyObject {
-    
     func sendNewsCopy(_ articles: [Article]?)
     func sendErrorInfo(_ errorInfo: String?)
     func sendCachedNews(_ cachedNews: [ArticleItem]?)

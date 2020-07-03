@@ -27,12 +27,11 @@ protocol Cachable {
     
     var isAvailableRecords: Bool { get set }
     var cacheLimit: Int { get set }
-    var managedContext: NSManagedObjectContext? { get set }
     
     func loadRecords() -> [ArticleItemData]?
     func deleteAllRecords()
     func makeRecord(_ articles: [ArticleItem])
-    func refresh(with: [Article])
+    func refresh(items: [Article])
     
 }
 
