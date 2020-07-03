@@ -37,14 +37,14 @@ extension MedicalSuppliesInteractor {
     func sendSavedArticles() {
         let savedArticlesData = dataCacher?.loadRecords()
         
-        let savedArticles: [ArticleItem] = (savedArticlesData?.compactMap{ articleData in
+        let savedArticles: [ArticleItem]? = (savedArticlesData?.compactMap{ articleData in
             let article = ArticleItem()
             article.title = articleData.title
             article.imageItem = articleData.imageItem
             article.descriptionItem = articleData.description
             article.date = "Set data"
             return article
-            })!
+            })
         self.output?.sendCachedNews(savedArticles)
     }
     

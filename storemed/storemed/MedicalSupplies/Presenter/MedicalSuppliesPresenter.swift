@@ -43,8 +43,8 @@ extension MedicalSuppliesPresenter: MedicalSuppliesInteractorOutput {
         showNews(articles)
     }
     
-    func sendCachedNews(_ cachedNews: [ArticleItem]) {
-        if cachedNews.count > 0 {
+    func sendCachedNews(_ cachedNews: [ArticleItem]?) {
+        if let cachedNews = cachedNews, cachedNews.count > 0 {
             view?.showMedicalSupplies(cachedNews)
         } else {
             view?.showEmptyDataView(title: "Пусто")
