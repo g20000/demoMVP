@@ -43,13 +43,16 @@ class DataCacher: NSObject, Cachable {
     
     func makeRecord(_ articles: [ArticleItem]) {
         let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-        for article in articles {//TODO: change to map
+        
+        let _: [ArticleItemData] = (articles.compactMap{ article in
             let articleItemData = ArticleItemData()
             articleItemData.title = article.title
-            articleItemData.descriptionItem = article.descriptionItem
-            articleItemData.date = Date()
             articleItemData.imageItem = article.imageItem
-        }
+            articleItemData.descriptionItem = article.description
+            articleItemData.date = Date()
+            return articleItemData
+        })
+        
         do {
             try context.save()
             print("Success")
@@ -58,7 +61,7 @@ class DataCacher: NSObject, Cachable {
         }
     }
     
-    func refresh() {
+    func refresh(with: [Article]) {
         guard isAvailableRecords else { return }
         
         deleteAllRecords()

@@ -30,11 +30,14 @@ class MedicalSuppliesRouter: NSObject {
         let presenter = MedicalSuppliesPresenter()
         let interactor = MedicalSuppliesInteractor()
         
+        
         view.presenter = presenter
         presenter.view = view
         
         presenter.interactor = interactor
         interactor.output = presenter
+        
+        interactor.dataCacher = DataCacher()
         
         window?.rootViewController = navigationController
     }

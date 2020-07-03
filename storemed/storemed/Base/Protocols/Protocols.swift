@@ -32,7 +32,7 @@ protocol Cachable {
     func loadRecords() -> [ArticleItemData]?
     func deleteAllRecords()
     func makeRecord(_ articles: [ArticleItem])
-    func refresh()
+    func refresh(with: [Article])
     
 }
 

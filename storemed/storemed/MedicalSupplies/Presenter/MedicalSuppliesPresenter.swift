@@ -33,6 +33,7 @@ class MedicalSuppliesPresenter: NSObject, Paginable {
 }
 
 extension MedicalSuppliesPresenter: MedicalSuppliesInteractorOutput {
+    
         
     func sendErrorInfo(_ errorInfo: String?) {
         view?.showErrorInfo(title: "Ошибка", description: errorInfo)
@@ -40,6 +41,14 @@ extension MedicalSuppliesPresenter: MedicalSuppliesInteractorOutput {
     
     func sendNewsCopy(_ articles: [Article]?) {
         showNews(articles)
+    }
+    
+    func sendCachedNews(_ cachedNews: [ArticleItem]) {
+        if cachedNews.count > 0 {
+            view?.showMedicalSupplies(cachedNews)
+        } else {
+            view?.showEmptyDataView(title: "Пусто")
+        }
     }
     
     private func showNews(_ items: Array<Article>?) {
