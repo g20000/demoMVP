@@ -21,6 +21,7 @@ class MedicalSuppliesRouter: NSObject {
     
     private func createAppModules() {
         createMedicalSuppliesList()
+        createNewsItemViewController()
     }
     
     private func createMedicalSuppliesList() {
@@ -29,7 +30,6 @@ class MedicalSuppliesRouter: NSObject {
         let view = navigationController.viewControllers.first as! MedicalSuppliesViewController
         let presenter = MedicalSuppliesPresenter()
         let interactor = MedicalSuppliesInteractor()
-        
         
         view.presenter = presenter
         presenter.view = view
@@ -42,4 +42,15 @@ class MedicalSuppliesRouter: NSObject {
         window?.rootViewController = navigationController
     }
     
+    private func createNewsItemViewController() {
+        let view = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier:"NewsItemWeb")
+        let presenter = MedicalSuppliesPresenter()
+        let interactor = MedicalSuppliesInteractor()
+
+        view.presenter = presenter
+        presenter.view = view
+
+        presenter.interactor = interactor
+        interactor.output = presenter
+    }
 }

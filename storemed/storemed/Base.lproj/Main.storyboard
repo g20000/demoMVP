@@ -261,6 +261,40 @@
             </objects>
             <point key="canvasLocation" x="1046.25" y="30.633802816901408"/>
         </scene>
+        <!--News Item Web View Controller-->
+        <scene sceneID="wP0-qE-P20">
+            <objects>
+                <viewController storyboardIdentifier="NewsItemWeb" useStoryboardIdentifierAsRestorationIdentifier="YES" id="jbR-or-OYe" customClass="NewsItemWebViewController" customModule="storemed" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="zoK-S1-ZqV">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZHo-Cp-dpJ">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="ZHo-Cp-dpJ" firstAttribute="leading" secondItem="NRy-VC-cAK" secondAttribute="leading" id="Shi-Oz-elN"/>
+                            <constraint firstItem="NRy-VC-cAK" firstAttribute="bottom" secondItem="ZHo-Cp-dpJ" secondAttribute="bottom" id="XzY-M6-pAz"/>
+                            <constraint firstItem="NRy-VC-cAK" firstAttribute="trailing" secondItem="ZHo-Cp-dpJ" secondAttribute="trailing" id="n8I-Pe-Tms"/>
+                            <constraint firstItem="ZHo-Cp-dpJ" firstAttribute="top" secondItem="NRy-VC-cAK" secondAttribute="top" id="pUU-DE-qqu"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="NRy-VC-cAK"/>
+                    </view>
+                    <connections>
+                        <outlet property="webView" destination="ZHo-Cp-dpJ" id="wpQ-1z-5nZ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Y2P-YY-vdv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1791" y="31"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="c0Y-0n-xTo">
             <objects>
