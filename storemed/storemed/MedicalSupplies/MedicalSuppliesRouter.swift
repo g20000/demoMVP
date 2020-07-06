@@ -11,23 +11,25 @@ import UIKit
 class MedicalSuppliesRouter: NSObject {
     
     private var window: UIWindow?
+    private var navigationController: UINavigationController?
     
     init(_ window: UIWindow?) {
         super.init()
         
         self.window = window
+        self.navigationController = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateInitialViewController() as? UINavigationController
         createAppModules()
+        window?.rootViewController = navigationController
     }
     
     private func createAppModules() {
         createMedicalSuppliesList()
-        createNewsItemViewController()
+        _ = createNewsItemViewController()
     }
     
     private func createMedicalSuppliesList() {
-        let navigationController = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateInitialViewController() as! UINavigationController
         
-        let view = navigationController.viewControllers.first as! MedicalSuppliesViewController
+        let view = navigationController?.viewControllers.first as! MedicalSuppliesViewController
         let presenter = MedicalSuppliesPresenter()
         let interactor = MedicalSuppliesInteractor()
         
@@ -39,18 +41,19 @@ class MedicalSuppliesRouter: NSObject {
         
         interactor.dataCacher = DataCacher()
         
-        window?.rootViewController = navigationController
     }
     
-    private func createNewsItemViewController() {
-        let view = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier:"NewsItemWeb")
-        let presenter = MedicalSuppliesPresenter()
-        let interactor = MedicalSuppliesInteractor()
+    private func createNewsItemViewController() -> NewsItemWebViewController {
+        let view = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier:"NewsItemWeb") as! NewsItemWebViewController
+        let presenter = NewsItemWebViewPresenter()
+        let interactor = NewsItemWebViewInteractor()
 
         view.presenter = presenter
         presenter.view = view
 
         presenter.interactor = interactor
         interactor.output = presenter
+        
+        return view
     }
 }
