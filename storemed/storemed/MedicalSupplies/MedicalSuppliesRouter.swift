@@ -23,31 +23,30 @@ class MedicalSuppliesRouter: NSObject {
     }
     
     private func createAppModules() {
-        createMedicalSuppliesList()
-        _ = createNewsItemViewController()
+        _ = createMedicalSuppliesList()
     }
     
     private func createMedicalSuppliesList() {
-        
         let view = navigationController?.viewControllers.first as! MedicalSuppliesViewController
         let presenter = MedicalSuppliesPresenter()
         let interactor = MedicalSuppliesInteractor()
         
         view.presenter = presenter
         presenter.view = view
+        presenter.router = self
         
         presenter.interactor = interactor
         interactor.output = presenter
         
         interactor.dataCacher = DataCacher()
-        
     }
     
-    private func createNewsItemViewController() -> NewsItemWebViewController {
+    private func createNewsItemViewController(toOpen url: URL) -> NewsItemWebViewController {
         let view = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier:"NewsItemWeb") as! NewsItemWebViewController
         let presenter = NewsItemWebViewPresenter()
         let interactor = NewsItemWebViewInteractor()
-
+        interactor.webViewUrl = url
+        
         view.presenter = presenter
         presenter.view = view
 
@@ -55,5 +54,12 @@ class MedicalSuppliesRouter: NSObject {
         interactor.output = presenter
         
         return view
+    }
+}
+
+extension MedicalSuppliesRouter: NewsRouterDelegate {
+    func openUrl(_ url: URL) {
+        let newsItemViewController = createNewsItemViewController(toOpen: url)
+        navigationController?.pushViewController(newsItemViewController, animated: true)
     }
 }

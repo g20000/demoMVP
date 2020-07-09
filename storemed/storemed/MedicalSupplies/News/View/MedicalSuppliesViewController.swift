@@ -42,6 +42,11 @@ class MedicalSuppliesViewController: UIViewController {
         presenter?.updateView()
     }
     
+    private func openUrl(url: URL?) {
+        guard let url = url else { return }
+        presenter?.openUrl(url: url)//MOve url label
+    }
+    
 }
 
 
@@ -60,6 +65,13 @@ extension MedicalSuppliesViewController: UITableViewDelegate, UITableViewDataSou
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         if indexPath.row == items.count - 1 {
             updateView()
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let article = articleByIndexPath(indexPath)
+        if let url = article?.url {
+            openUrl(url: url)
         }
     }
     

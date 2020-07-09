@@ -73,6 +73,7 @@
 		4269FFD724A9D54400AF18D3 /* DataCacher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4269FFD624A9D54400AF18D3 /* DataCacher.swift */; };
 		4269FFDB24A9E29300AF18D3 /* ArticleItemData+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4269FFD924A9E29300AF18D3 /* ArticleItemData+CoreDataProperties.swift */; };
 		4269FFDC24A9E29300AF18D3 /* ArticleItemData+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4269FFDA24A9E29300AF18D3 /* ArticleItemData+CoreDataClass.swift */; };
+		426BCCD424B7490B00F08159 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 426BCCD324B7490B00F08159 /* WebKit.framework */; };
 		426CF7C622E9F23600DF76B2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 426CF7C522E9F23600DF76B2 /* AppDelegate.swift */; };
 		426CF7CB22E9F23600DF76B2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 426CF7C922E9F23600DF76B2 /* Main.storyboard */; };
 		426CF7CE22E9F23600DF76B2 /* storemed.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 426CF7CC22E9F23600DF76B2 /* storemed.xcdatamodeld */; };
@@ -148,6 +149,7 @@
 		4269FFD624A9D54400AF18D3 /* DataCacher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataCacher.swift; sourceTree = "<group>"; };
 		4269FFD924A9E29300AF18D3 /* ArticleItemData+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ArticleItemData+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		4269FFDA24A9E29300AF18D3 /* ArticleItemData+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ArticleItemData+CoreDataClass.swift"; sourceTree = "<group>"; };
+		426BCCD324B7490B00F08159 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		426CF7C222E9F23600DF76B2 /* storemed.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = storemed.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		426CF7C522E9F23600DF76B2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		426CF7CA22E9F23600DF76B2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -183,6 +185,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				426BCCD424B7490B00F08159 /* WebKit.framework in Frameworks */,
 				0DFE15CFE97CA1834AD0E3EC /* Pods_storemed.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -522,6 +525,7 @@
 		BE8083FAB31E8D130B8AA6F1 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				426BCCD324B7490B00F08159 /* WebKit.framework */,
 				C4EE855C02412065F3E0B987 /* Pods_storemed.framework */,
 				16E35944BA1B8ECC02705D64 /* Pods_storemedTests.framework */,
 			);

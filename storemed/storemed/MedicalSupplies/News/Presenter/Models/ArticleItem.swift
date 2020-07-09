@@ -14,5 +14,6 @@ class ArticleItem: NSObject {
     var imageItem: String?
     var descriptionItem: String?
     var date: String?
+    var url: URL? = URL(string: "")
     
 }

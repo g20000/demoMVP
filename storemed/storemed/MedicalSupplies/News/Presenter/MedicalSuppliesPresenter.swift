@@ -8,10 +8,15 @@
 
 import UIKit
 
+protocol NewsRouterDelegate {
+    func openUrl(_ url: URL)
+}
+
 class MedicalSuppliesPresenter: NSObject, Paginable {
     
     var view: MedicalSuppliesView?
     var interactor: MedicalSuppliesInteractorInput?
+    var router: NewsRouterDelegate?
     
     private var articles: [Article]?
     
@@ -30,11 +35,16 @@ class MedicalSuppliesPresenter: NSObject, Paginable {
         interactor?.requestMedicalSupplies(currentPageNumber: currentPageNumber)
     }
     
+    func openUrl(url: URL?) {
+        if let url = url {
+            self.router?.openUrl(url)
+        }
+    }
+    
 }
 
 extension MedicalSuppliesPresenter: MedicalSuppliesInteractorOutput {
     
-        
     func sendErrorInfo(_ errorInfo: String?) {
         view?.showErrorInfo(title: "Ошибка", description: errorInfo)
     }
@@ -53,12 +63,13 @@ extension MedicalSuppliesPresenter: MedicalSuppliesInteractorOutput {
     
     private func showNews(_ items: Array<Article>?) {
         let medicalSuppliesItems: [ArticleItem] = (items?.compactMap{ article in
-            let articleItem = ArticleItem()
-            articleItem.title = article.title
-            articleItem.imageItem = article.urlToImage
-            articleItem.descriptionItem = article.description
-            articleItem.date = article.publishedAt
-            return articleItem
+                let articleItem = ArticleItem()
+                articleItem.title = article.title
+                articleItem.imageItem = article.urlToImage
+                articleItem.descriptionItem = article.description
+                articleItem.date = article.publishedAt
+                articleItem.url = URL(string: article.url!)
+                return articleItem
             })!
         
         if medicalSuppliesItems.count > 0 {
