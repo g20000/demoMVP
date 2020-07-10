@@ -8,13 +8,11 @@
 
 import Foundation
 
-protocol MedicalSuppliesInteractorInput: AnyObject {
-    
-    func requestMedicalSupplies(currentPageNumber: Int)
-    
+protocol NewsInteractorInput: AnyObject {
+    func requestNews(currentPageNumber: Int)
 }
 
-protocol MedicalSuppliesInteractorOutput: AnyObject {
+protocol NewsInteractorOutput: AnyObject {
     func sendNewsCopy(_ articles: [Article]?)
     func sendErrorInfo(_ errorInfo: String?)
     func sendCachedNews(_ cachedNews: [ArticleItem]?)

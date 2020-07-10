@@ -10,14 +10,14 @@ import UIKit
 import EasyDi
 import SystemConfiguration
 
-class MedicalSuppliesViewController: UIViewController {
+class NewsViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     
     @IBOutlet weak var viewEmptyData: UIView!
     @IBOutlet weak var labelEmptyDataInfo: UILabel!
     
-    var presenter: MedicalSuppliesPresenter?
+    var presenter: NewsPresenter?
     
     private var searchController: UISearchController!
     
@@ -52,7 +52,7 @@ class MedicalSuppliesViewController: UIViewController {
 
 //MARK: - tableView
 
-extension MedicalSuppliesViewController: UITableViewDelegate, UITableViewDataSource {
+extension NewsViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return items.count
@@ -80,7 +80,7 @@ extension MedicalSuppliesViewController: UITableViewDelegate, UITableViewDataSou
     }
     
     private func prepareMedicalSupplyTableViewCell(_ tableView: UITableView, indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell") as! MedicalSupplyTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell") as! NewsItemTableViewCell
         let article = articleByIndexPath(indexPath)
         
         cell.labelTitle.text = article?.title
@@ -108,9 +108,9 @@ extension MedicalSuppliesViewController: UITableViewDelegate, UITableViewDataSou
 
 //MARK: - presenter response
 
-extension MedicalSuppliesViewController: MedicalSuppliesView {
+extension NewsViewController: NewsView {
     
-    func showMedicalSupplies(_ medicalSupplies: Array<ArticleItem>?) {
+    func showNews(_ medicalSupplies: Array<ArticleItem>?) {
         hideHUD()
         //hideEmptyDataViewFromScreen()
         self.items.append(contentsOf: medicalSupplies!)
@@ -147,7 +147,7 @@ extension MedicalSuppliesViewController: MedicalSuppliesView {
 
 //MARK: - searchBar
 
-extension MedicalSuppliesViewController: UISearchBarDelegate {
+extension NewsViewController: UISearchBarDelegate {
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         searchBar.resignFirstResponder()
@@ -158,7 +158,7 @@ extension MedicalSuppliesViewController: UISearchBarDelegate {
 
 //MARK: - is network abailable
 //TODO: move to manager
-extension MedicalSuppliesViewController {
+extension NewsViewController {
 
     func isInternetAvailable() -> Bool {
         var zeroAddress = sockaddr_in()

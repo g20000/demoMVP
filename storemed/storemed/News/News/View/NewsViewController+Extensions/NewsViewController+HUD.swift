@@ -8,7 +8,7 @@
 
 import UIKit
 
-extension MedicalSuppliesViewController {
+extension NewsViewController {
 
     enum ViewTags: Int {
         case hud = 333

@@ -27,9 +27,9 @@ class MedicalSuppliesRouter: NSObject {
     }
     
     private func createMedicalSuppliesList() {
-        let view = navigationController?.viewControllers.first as! MedicalSuppliesViewController
-        let presenter = MedicalSuppliesPresenter()
-        let interactor = MedicalSuppliesInteractor()
+        let view = navigationController?.viewControllers.first as! NewsViewController
+        let presenter = NewsPresenter()
+        let interactor = NewsInteractor()
         
         view.presenter = presenter
         presenter.view = view

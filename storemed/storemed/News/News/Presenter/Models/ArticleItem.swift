@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ArticleItem: NSObject {
+struct ArticleItem {
 
     var title: String?
     var imageItem: String?

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MedicalSupplyTableViewCell: UITableViewCell {
+class NewsItemTableViewCell: UITableViewCell {
 
     @IBOutlet weak var labelTitle: UILabel!
     @IBOutlet weak var imageViewNewsItem: UIImageView!

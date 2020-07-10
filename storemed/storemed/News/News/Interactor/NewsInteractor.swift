@@ -8,16 +8,16 @@
 
 import UIKit
 
-class MedicalSuppliesInteractor: NSObject {
+class NewsInteractor: NSObject {
 
-    var output: MedicalSuppliesInteractorOutput?
+    var output: NewsInteractorOutput?
     var dataCacher: DataCacher?
     
 }
 
-extension MedicalSuppliesInteractor: MedicalSuppliesInteractorInput {
+extension NewsInteractor: NewsInteractorInput {
     
-    func requestMedicalSupplies(currentPageNumber: Int) {
+    func requestNews(currentPageNumber: Int) {
         _ = NewsApi().loadNews(page: currentPageNumber, success: { articles in
             print(currentPageNumber)
             self.dataCacher?.refresh(items: articles!)
@@ -31,13 +31,13 @@ extension MedicalSuppliesInteractor: MedicalSuppliesInteractorInput {
 
 //MARK: db caching
 
-extension MedicalSuppliesInteractor {
+extension NewsInteractor {
     
     func sendSavedArticles() {
         let savedArticlesData = dataCacher?.loadRecords()
         
         let savedArticles: [ArticleItem]? = (savedArticlesData?.compactMap{ articleData in
-                let article = ArticleItem()
+                var article = ArticleItem()
                 article.title = articleData.title
                 article.imageItem = articleData.imageItem
                 article.descriptionItem = articleData.description

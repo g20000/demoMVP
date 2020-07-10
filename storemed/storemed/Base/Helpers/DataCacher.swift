@@ -47,7 +47,7 @@ class DataCacher: NSObject, Cachable {
             let articleItemData = ArticleItemData(context: context)
             articleItemData.title = article.title
             articleItemData.imageItem = article.imageItem
-            articleItemData.descriptionItem = article.description
+            articleItemData.descriptionItem = article.descriptionItem
             articleItemData.date = Date()
             return articleItemData
         })
@@ -61,12 +61,11 @@ class DataCacher: NSObject, Cachable {
     }
     
     func refresh(items: [Article]) {
-        //guard isAvailableRecords else { return }
         
         deleteAllRecords()
         
         let medicalSuppliesItems: [ArticleItem] = items.compactMap{ article in
-            let articleItem = ArticleItem()
+            var articleItem = ArticleItem()
             articleItem.title = article.title
             articleItem.imageItem = article.urlToImage
             articleItem.descriptionItem = article.description

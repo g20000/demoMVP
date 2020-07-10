@@ -12,10 +12,10 @@ protocol NewsRouterDelegate {
     func openUrl(_ url: URL)
 }
 
-class MedicalSuppliesPresenter: NSObject, Paginable {
+class NewsPresenter: NSObject, Paginable {
     
-    var view: MedicalSuppliesView?
-    var interactor: MedicalSuppliesInteractorInput?
+    var view: NewsView?
+    var interactor: NewsInteractorInput?
     var router: NewsRouterDelegate?
     
     private var articles: [Article]?
@@ -32,7 +32,7 @@ class MedicalSuppliesPresenter: NSObject, Paginable {
         
         currentPageNumber = requiredPageNumber
         
-        interactor?.requestMedicalSupplies(currentPageNumber: currentPageNumber)
+        interactor?.requestNews(currentPageNumber: currentPageNumber)
     }
     
     func openUrl(url: URL?) {
@@ -43,7 +43,7 @@ class MedicalSuppliesPresenter: NSObject, Paginable {
     
 }
 
-extension MedicalSuppliesPresenter: MedicalSuppliesInteractorOutput {
+extension NewsPresenter: NewsInteractorOutput {
     
     func sendErrorInfo(_ errorInfo: String?) {
         view?.showErrorInfo(title: "Ошибка", description: errorInfo)
@@ -55,7 +55,7 @@ extension MedicalSuppliesPresenter: MedicalSuppliesInteractorOutput {
     
     func sendCachedNews(_ cachedNews: [ArticleItem]?) {
         if let cachedNews = cachedNews, cachedNews.count > 0 {
-            view?.showMedicalSupplies(cachedNews)
+            view?.showNews(cachedNews)
         } else {
             view?.showEmptyDataView(title: "Пусто")
         }
@@ -63,7 +63,7 @@ extension MedicalSuppliesPresenter: MedicalSuppliesInteractorOutput {
     
     private func showNews(_ items: Array<Article>?) {
         let medicalSuppliesItems: [ArticleItem] = (items?.compactMap{ article in
-                let articleItem = ArticleItem()
+                var articleItem = ArticleItem()
                 articleItem.title = article.title
                 articleItem.imageItem = article.urlToImage
                 articleItem.descriptionItem = article.description
@@ -73,7 +73,7 @@ extension MedicalSuppliesPresenter: MedicalSuppliesInteractorOutput {
             })!
         
         if medicalSuppliesItems.count > 0 {
-            view?.showMedicalSupplies(medicalSuppliesItems)
+            view?.showNews(medicalSuppliesItems)
         } else {
             view?.showEmptyDataView(title: "Пусто")
         }

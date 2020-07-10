@@ -8,9 +8,9 @@
 
 import Foundation
 
-protocol MedicalSuppliesView: AnyObject {
+protocol NewsView: AnyObject {
     
-    func showMedicalSupplies(_ medicalSupplies: Array<ArticleItem>?)
+    func showNews(_ items: Array<ArticleItem>?)
     func stopLoading()
     func showErrorInfo(title: String?, description: String?)
     func showEmptyDataView(title: String?)
