@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="gha-4h-vCj">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="gha-4h-vCj">
     <device id="retina4_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -107,16 +107,6 @@
                                                                     </constraints>
                                                                 </view>
                                                             </subviews>
-                                                            <userDefinedRuntimeAttributes>
-                                                                <userDefinedRuntimeAttribute type="boolean" keyPath="cornerRadiusHalf" value="YES"/>
-                                                                <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                                                    <real key="value" value="1"/>
-                                                                </userDefinedRuntimeAttribute>
-                                                                <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                                                    <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                </userDefinedRuntimeAttribute>
-                                                                <userDefinedRuntimeAttribute type="boolean" keyPath="roundForTopCorners" value="YES"/>
-                                                            </userDefinedRuntimeAttributes>
                                                         </stackView>
                                                     </subviews>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -157,7 +147,7 @@
                                             <outlet property="labelTitle" destination="3sW-s0-qVF" id="4jk-nA-kKh"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell no network" id="xWG-Jl-pOq">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell absent network" id="xWG-Jl-pOq" customClass="AbsentNetworkTableViewCell" customModule="storemed" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="298" width="320" height="60"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="xWG-Jl-pOq" id="4EH-Hu-VNk">
@@ -179,26 +169,25 @@
                                                                             <color key="textColor" red="1" green="0.23137254900000001" blue="0.23921568630000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
+                                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b9f-cQ-NDK">
+                                                                            <rect key="frame" x="229" y="10" width="76" height="30"/>
+                                                                            <state key="normal" title="Повторить"/>
+                                                                            <connections>
+                                                                                <action selector="onRetryButtonTouched:" destination="xWG-Jl-pOq" eventType="touchUpInside" id="BCq-fZ-QRj"/>
+                                                                            </connections>
+                                                                        </button>
                                                                     </subviews>
                                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="bottom" secondItem="sc4-zE-UcE" secondAttribute="bottom" constant="5" id="BHJ-1M-4Da"/>
+                                                                        <constraint firstItem="b9f-cQ-NDK" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="sc4-zE-UcE" secondAttribute="trailing" constant="5" id="CbR-Rd-rAr"/>
                                                                         <constraint firstItem="sc4-zE-UcE" firstAttribute="top" secondItem="ak6-y8-V5f" secondAttribute="top" constant="5" id="MIi-ZA-rzk"/>
-                                                                        <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="sc4-zE-UcE" secondAttribute="trailing" constant="5" id="cL7-Ba-NNe"/>
+                                                                        <constraint firstItem="b9f-cQ-NDK" firstAttribute="centerY" secondItem="ak6-y8-V5f" secondAttribute="centerY" id="YQa-0d-nH2"/>
                                                                         <constraint firstItem="sc4-zE-UcE" firstAttribute="leading" secondItem="ak6-y8-V5f" secondAttribute="leading" constant="5" id="oiD-rC-J2u"/>
+                                                                        <constraint firstAttribute="trailing" secondItem="b9f-cQ-NDK" secondAttribute="trailing" constant="5" id="xDP-fL-DpE"/>
                                                                     </constraints>
                                                                 </view>
                                                             </subviews>
-                                                            <userDefinedRuntimeAttributes>
-                                                                <userDefinedRuntimeAttribute type="boolean" keyPath="cornerRadiusHalf" value="YES"/>
-                                                                <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                                                    <real key="value" value="1"/>
-                                                                </userDefinedRuntimeAttribute>
-                                                                <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                                                    <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                </userDefinedRuntimeAttribute>
-                                                                <userDefinedRuntimeAttribute type="boolean" keyPath="roundForTopCorners" value="YES"/>
-                                                            </userDefinedRuntimeAttributes>
                                                         </stackView>
                                                     </subviews>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -232,9 +221,6 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <connections>
-                                            <outlet property="labelTitle" destination="sc4-zE-UcE" id="hpy-4W-Fcd"/>
-                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>

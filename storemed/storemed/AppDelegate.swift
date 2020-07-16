@@ -95,7 +95,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func createRouter() {
-        _ = MedicalSuppliesRouter(self.window)
+        _ = NewsRouter(self.window)
     }
 
 }

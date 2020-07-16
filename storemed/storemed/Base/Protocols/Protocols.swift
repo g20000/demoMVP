@@ -7,6 +7,7 @@
 //
 
 import CoreData
+import UIKit
 
 
 protocol Copying {
@@ -36,5 +37,19 @@ protocol Cachable {
 }
 
 protocol Paginable {
+    
     var currentPageNumber: Int { get set }
+    
+} 
+
+/// It needs if you want to show uitableviewcell with info: Network is absent
+
+protocol NetworkAbsentScrollable {
+    
+    /// flag property show/hide to perform loadAbsentNetworkTableViewCell()
+    var isNeedShowMessage: Bool { get set }
+    
+    /// view render block
+    func prepareAbsentNetworkTableViewCell(_ tableView: UITableView, indexPath: IndexPath) -> UITableViewCell?
+    
 }

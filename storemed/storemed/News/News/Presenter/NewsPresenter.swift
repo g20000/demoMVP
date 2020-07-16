@@ -31,7 +31,6 @@ class NewsPresenter: NSObject, Paginable {
         }
         
         currentPageNumber = requiredPageNumber
-        
         interactor?.requestNews(currentPageNumber: currentPageNumber)
     }
     

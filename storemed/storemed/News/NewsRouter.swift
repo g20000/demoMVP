@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MedicalSuppliesRouter: NSObject {
+class NewsRouter: NSObject {
     
     private var window: UIWindow?
     private var navigationController: UINavigationController?
@@ -57,7 +57,7 @@ class MedicalSuppliesRouter: NSObject {
     }
 }
 
-extension MedicalSuppliesRouter: NewsRouterDelegate {
+extension NewsRouter: NewsRouterDelegate {
     func openUrl(_ url: URL) {
         let newsItemViewController = createNewsItemViewController(toOpen: url)
         navigationController?.pushViewController(newsItemViewController, animated: true)

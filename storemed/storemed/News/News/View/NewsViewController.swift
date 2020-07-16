@@ -10,7 +10,7 @@ import UIKit
 import EasyDi
 import SystemConfiguration
 
-class NewsViewController: UIViewController {
+class NewsViewController: UIViewController, NetworkAbsentScrollable {
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -22,6 +22,10 @@ class NewsViewController: UIViewController {
     private var searchController: UISearchController!
     
     internal var items = Array<ArticleItem>()
+    var isNeedShowMessage = false
+    
+    
+    //MARK: - Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -62,6 +66,18 @@ extension NewsViewController: UITableViewDelegate, UITableViewDataSource {
         return createTableViewCell(tableView, indexPath: indexPath)
     }
     
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        guard !isInternetAvailable() else { return nil }
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell absent network") as? AbsentNetworkTableViewCell
+        cell?.delegate = self
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return isInternetAvailable() ? 0 : 60
+    }
+    
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         if indexPath.row == items.count - 1 {
             updateView()
@@ -91,6 +107,11 @@ extension NewsViewController: UITableViewDelegate, UITableViewDataSource {
         return cell
     }
     
+    func prepareAbsentNetworkTableViewCell(_ tableView: UITableView, indexPath: IndexPath) -> UITableViewCell? {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell absent network")
+        return cell
+    }
+    
     private func articleByIndexPath(_ indexPath: IndexPath) -> ArticleItem? {
         return articleByIndex(indexPath.row)
     }
@@ -101,6 +122,15 @@ extension NewsViewController: UITableViewDelegate, UITableViewDataSource {
         }
         
         return nil
+    }
+    
+}
+
+
+extension NewsViewController: AbsentNetworkTableViewCellDelegate {
+    
+    func retryAction() {
+        self.presenter?.updateView()
     }
     
 }

@@ -18,11 +18,11 @@ class NewsInteractor: NSObject {
 extension NewsInteractor: NewsInteractorInput {
     
     func requestNews(currentPageNumber: Int) {
-        _ = NewsApi().loadNews(page: currentPageNumber, success: { articles in
+        _ = NewsApi().loadNews(page: currentPageNumber, success: { [unowned self] articles in
             print(currentPageNumber)
             self.dataCacher?.refresh(items: articles!)
             self.output?.sendNewsCopy(articles)
-        }, failure: { error in
+        }, failure: { [unowned self] error in
             self.output?.sendErrorInfo(error.description)
         })
     }
