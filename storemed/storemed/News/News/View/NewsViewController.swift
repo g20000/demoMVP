@@ -130,7 +130,8 @@ extension NewsViewController: UITableViewDelegate, UITableViewDataSource {
 extension NewsViewController: AbsentNetworkTableViewCellDelegate {
     
     func retryAction() {
-        self.presenter?.updateView()
+        self.tableView?.beginUpdates()
+        self.tableView?.endUpdates()
     }
     
 }
@@ -172,17 +173,6 @@ extension NewsViewController: NewsView {
 //        view.sendSubviewToBack(viewEmptyData)
 //    }
     
-}
-
-
-//MARK: - searchBar
-
-extension NewsViewController: UISearchBarDelegate {
-    
-    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        searchBar.resignFirstResponder()
-        updateView()
-    }
 }
 
 
