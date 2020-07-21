@@ -15,9 +15,9 @@ protocol NewsRouterDelegate {
 class NewsPresenter: NSObject, Paginable {
     
     var view: NewsView?
-    var interactor: NewsInteractorInput?
     var router: NewsRouterDelegate?
     
+    var dataCacher: DataCacher?
     private var articles: [Article]?
     
     internal var currentPageNumber = 0
@@ -31,8 +31,25 @@ class NewsPresenter: NSObject, Paginable {
         }
         
         currentPageNumber = requiredPageNumber
-        interactor?.requestNews(currentPageNumber: currentPageNumber)
+        requestNews(currentPageNumber: currentPageNumber)
     }
+    
+    
+    func requestNews(currentPageNumber: Int) {
+        _ = NewsApi().loadNews(page: currentPageNumber, success: { [unowned self] articles in
+            print(currentPageNumber)
+            self.dataCacher?.refresh(items: articles!)
+            self.sendNewsCopy(articles)
+        }, failure: { [unowned self] error in
+            self.sendErrorInfo(error.description)
+        })
+    }
+}
+
+
+//MARK: - router/navigation
+
+extension NewsPresenter {
     
     func openUrl(url: URL?) {
         if let url = url {
@@ -42,7 +59,7 @@ class NewsPresenter: NSObject, Paginable {
     
 }
 
-extension NewsPresenter: NewsInteractorOutput {
+extension NewsPresenter {
     
     func sendErrorInfo(_ errorInfo: String?) {
         view?.showErrorInfo(title: "Ошибка", description: errorInfo)

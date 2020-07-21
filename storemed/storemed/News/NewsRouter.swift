@@ -29,16 +29,11 @@ class NewsRouter: NSObject {
     private func createMedicalSuppliesList() {
         let view = navigationController?.viewControllers.first as! NewsViewController
         let presenter = NewsPresenter()
-        let interactor = NewsInteractor()
         
         view.presenter = presenter
         presenter.view = view
         presenter.router = self
-        
-        presenter.interactor = interactor
-        interactor.output = presenter
-        
-        interactor.dataCacher = DataCacher()
+        presenter.dataCacher = DataCacher()
     }
     
     private func createNewsItemViewController(toOpen url: URL) -> NewsItemWebViewController {
