@@ -39,14 +39,10 @@ class NewsRouter: NSObject {
     private func createNewsItemViewController(toOpen url: URL) -> NewsItemWebViewController {
         let view = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier:"NewsItemWeb") as! NewsItemWebViewController
         let presenter = NewsItemWebViewPresenter()
-        let interactor = NewsItemWebViewInteractor()
-        interactor.webViewUrl = url
+        presenter.webViewUrl = url
         
         view.presenter = presenter
         presenter.view = view
-
-        presenter.interactor = interactor
-        interactor.output = presenter
         
         return view
     }

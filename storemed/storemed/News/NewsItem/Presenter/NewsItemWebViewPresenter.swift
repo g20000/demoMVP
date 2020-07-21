@@ -10,21 +10,14 @@ import UIKit
 
 class NewsItemWebViewPresenter {
     var view: NewsItemWebView?
-    var interactor: NewsItemWebViewInteractorInput?
+    var webViewUrl: URL!
     
     func updateView() {
-        interactor?.requestUrl()
+        self.sendUrlCopy(webViewUrl)
     }
-}
-
-extension NewsItemWebViewPresenter: NewsItemWebViewInteractorOutput {
     
     func sendUrlCopy(_ url: URL) {
         view?.showWebByUrl(url)
     }
-    
-    func sendErrorInfo(_ errorInfo: String?) {
-        
-    }
-    
 }
+
