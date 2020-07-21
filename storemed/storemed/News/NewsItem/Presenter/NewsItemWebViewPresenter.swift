@@ -13,11 +13,7 @@ class NewsItemWebViewPresenter {
     var webViewUrl: URL!
     
     func updateView() {
-        self.sendUrlCopy(webViewUrl)
-    }
-    
-    func sendUrlCopy(_ url: URL) {
-        view?.showWebByUrl(url)
+        view?.showWebByUrl(webViewUrl)
     }
 }
 
