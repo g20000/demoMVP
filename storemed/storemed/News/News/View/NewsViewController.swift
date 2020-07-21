@@ -10,7 +10,7 @@ import UIKit
 import EasyDi
 import SystemConfiguration
 
-class NewsViewController: UIViewController, NetworkAbsentScrollable {
+class NewsViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -22,7 +22,6 @@ class NewsViewController: UIViewController, NetworkAbsentScrollable {
     private var searchController: UISearchController!
     
     internal var items = Array<ArticleItem>()
-    var isNeedShowMessage = false
     
     
     //MARK: - Lifecycle
